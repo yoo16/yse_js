@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/prism.css">
+  <link rel="stylesheet" href="../css/default.css">
+
+  <title>Quiz Number</title>
+</head>
+
+<body>
+  <div id="content" class="container">
+    <div><a href="../index.html">Back</a></div>
+    <h1 class="h1"><span class="ruby" word="数字" kana="すうじ"></span><span class="ruby" word="当" kana="あ"></span>てゲーム</a>
+    </h1>
+
+    <h2 class="h2">参考</h2>
+    <ul class="list-group">
+      <li class="list-group-item"><a
+          href="https://developer.mozilla.org/ja/docs/Learn/JavaScript/First_steps/A_first_splash"
+          target="_blank">https://developer.mozilla.org/ja/docs/Learn/JavaScript/First_steps/A_first_splash</a></li>
+    </ul>
+
+    <div>
+
+      <div class="form">
+        <label for="guessField">数字を入力してください: </label>
+        <input type="text" id="guessField" class="guessField">
+        <input type="submit" value="予想を入力" class="guessSubmit">
+      </div>
+
+      <h2 class="h2">HTML</h2>
+
+      <script type="text/plain" class="language-markup">
+      <div class="form">
+        <label for="guessField">数字を入力してください: </label>
+        <input type="text" id="guessField" class="guessField">
+        <input type="submit" value="予想を入力" class="guessSubmit">
+      </div>
+      </script>
+
+      <h2 class="h2">JS</h2>
+      <pre class="language-javascript"><code>
+        function checkGuess() {
+          let userGuess = Number(guessField.value);
+          if (guessCount === 1) {
+              guesses.textContent = '前回の予想: ';
+          }
+      
+          guesses.textContent += userGuess + ' ';
+      
+          if (userGuess === randomNumber) {
+              lastResult.textContent = 'おめでとう! 正解です!';
+              lastResult.style.backgroundColor = 'green';
+              lowOrHi.textContent = '';
+              setGameOver();
+          } else if (guessCount === 10) {
+              lastResult.textContent = '!!!ゲームオーバー!!!';
+              lowOrHi.textContent = '';
+              setGameOver();
+          } else {
+              lastResult.textContent = '間違いです!';
+              lastResult.style.backgroundColor = 'red';
+              if (userGuess && randomNumber) {
+                  lowOrHi.textContent = '今の予想は小さすぎです!もっと大きな数字です。';
+              } else if (userGuess && randomNumber) {
+                  lowOrHi.textContent = '今の予想は大きすぎです!もっと小さな数字です。';
+              }
+          }
+      }
+      </code></pre>
+    </div>
+
+    <div>
+      <h2 class="h2">function()</h2>
+      <p>
+        <span class="ruby" word="関数" kana="かんすう"></span> を<span class="ruby" word="作成"
+          kana="さくせい"></span>する
+      </p>
+      <pre class="language-javascript"><code>
+      /**
+       * set game
+       */
+      function setGameOver() {
+
+      }
+
+      //set game
+      function resetGame() {
+      }
+
+      function checkGuess() {
+      }
+      </code></pre>
+    </div>
+
+    <div id="variable">
+      <h2 class="h2">変数</h2>
+
+      <h3 class="h3">JS:変数を利用しない場合</h3>
+      <pre class="language-javascript"><code>
+      $('#itemList li').removeClass('dummy'); //class から dummy を削除
+      $('#itemList li').addClass('item');     //class に item を追加
+      $('#itemList li').css('color', 'red');  //css に color="red" を追加
+      </code></pre>
+
+    </div>
+
+    <div><a href="../index.html">Back</a></div>
+  </div>
+
+  <script src="../js/jquery-3.5.0.min.js"></script>
+  <script src="js/main.js"></script>
+
+  <script src="../js/bootstrap/bootstrap.min.js"></script>
+  <script src="../js/prism.js"></script>
+  <script src="../js/ruby.js"></script>
+</body>
+
+</html>

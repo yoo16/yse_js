@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/prism.css">
+  <link rel="stylesheet" href="../css/default.css">
+
+  <title>WA32 samples</title>
+</head>
+
+<body>
+  <div id="content" class="container">
+    <div><a href="../index.html">Back</a></div>
+    <h1 class="h1">基本構文</h1>
+
+    <div>
+      <div>
+        <ul id="itemList">
+          <li class="dummy">Item 1</li>
+          <li class="dummy">Item 2</li>
+          <li class="dummy">Item 3</li>
+        </ul>
+      </div>
+
+      <h2 class="h2">HTML</h2>
+      <script type="text/plain" class="language-markup">
+      <ul id="itemList">
+        <li class="dummy">Item 1</li>
+        <li class="dummy">Item 2</li>
+        <li class="dummy">Item 3</li>
+      </ul>
+      </script>
+
+      <h2 class="h2"><label for="" class="badge badge-danger">重要</label> セレクタ</h2>
+      <pre class="language-javascript"><code>
+      $(セレクタ).メソッド(パラメータ);
+      //または
+      jQuery(セレクタ).メソッド(パラメータ);
+      </code></pre>
+
+      <h2 class="h2">val() メソッド</h2>
+      <pre class="language-javascript"><code>
+      //値を設定
+      $(セレクタ).val(パラメータ);
+
+      //値を取得
+      $(セレクタ).val();
+      </code></pre>
+    </div>
+
+    <div>
+      <h2 class="h2"><label for="" class="badge badge-danger">重要</label> DOMContentLoaded</h2>
+      <p>
+        <ul>
+          <li>DOM読み込み完了後に、処理を実行する</li>
+          <li>DOM読み込み前にJavaScriptが実行されると、動作しない場合が多い</li>
+        </ul>
+      </p>
+      <pre class="language-javascript"><code>
+      $(function () {
+        //DOM読み込み完了時に、実行される
+      }
+
+      //古い書き方
+      $(document).ready(function() {
+        //DOM読み込み完了時に、実行される
+      });
+      </code></pre>
+    </div>
+
+    <div id="variable">
+      <h2 class="h2">変数</h2>
+
+      <h3 class="h3">JS:変数を利用しない場合</h3>
+      <pre class="language-javascript"><code>
+      $('#itemList li').removeClass('dummy'); //class から dummy を削除
+      $('#itemList li').addClass('item');     //class に item を追加
+      $('#itemList li').css('color', 'red');  //css に color="red" を追加
+      </code></pre>
+
+      <h3 class="h3">JS:変数を利用する場合</h3>
+      <pre class="language-javascript"><code>
+      let target = $('#itemList li');
+      target.removeClass('item');
+      target.addClass('item');
+      target.css('color', 'red');
+      </code></pre>
+
+      <h3 class="h3">JS:省略（メソッドチェーン）</h3>
+      <pre class="language-javascript"><code>
+      let target = $('#itemList li');
+      target.removeClass('item').addClass('item').css('color', 'red');
+      </code></pre>
+    </div>
+
+    <div><a href="../index.html">Back</a></div>
+  </div>
+
+  <script src="../js/jquery-3.5.0.min.js"></script>
+  <script src="js/main.js"></script>
+
+  <script src="../js/bootstrap/bootstrap.min.js"></script>
+  <script src="../js/prism.js"></script>
+</body>
+
+</html>
