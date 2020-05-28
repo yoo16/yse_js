@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/prism.css">
+  <link rel="stylesheet" href="../css/default.css">
+
+  <title>配列</title>
+</head>
+
+<body>
+  <div id="content" class="container">
+    <div><a href="../index.html">Back</a></div>
+    <h1 class="h1"><span class="ruby" word="配列" kana="はいれつ"></span>(Array)</a></h1>
+
+    <div>
+      <h2 class="h2">配列(Array)とは？</h2>
+      <ul class="list-group">
+        <li class="list-group-item">複数の「値」を箱に格納したデータ構造</li>
+        <li class="list-group-item">Array はインデックス(Index)と値(Value)で作られる</li>
+        <li class="list-group-item">Indexは 0 から n-1　の整数値(Int)</li>
+      </ul>
+      <div>
+        <img src="images/array.png" alt="">
+      </div>
+
+      <h2 class="h2">Array を利用しない場合</h2>
+      <h3 class="h3">JS</h3>
+      <pre class="language-javascript"><code>
+      let flower1 = "サクラ";
+      let flower2 = "チューリップ";
+      let flower3 = "ヒマワリ";
+      ...
+      </code></pre>
+
+      <p>
+        花(flower）の数が増えるたびに、変数を定義する必要がある
+      </p>
+      <p>
+        flower4, flower5 ...
+      </p>
+
+      <h2 class="h2">JavaScriptの配列</h2>
+      <p>
+        Array を利用すると、値（Value）をまとめて設定できる
+      </p>
+
+      <h3 class="h3">JS</h3>
+      <pre class="language-javascript"><code>
+      let flowers = ['サクラ', 'チューリップ', 'ヒマワリ'];
+      </code></pre>
+
+      <h3 class="h3">Debug（デバッグ）</h3>
+      <p>Array データをブラウザで Debug してみる</p>
+      <pre class="language-javascript"><code>
+    console.log(flowers);
+
+    //Result
+    0: "サクラ"
+    1: "チューリップ"
+    2: "ヒマワリ"
+    </code></pre>
+      <p>Indexと値を確認することができる</p>
+
+      <div id="init">
+        <h2 class="h2">new Array() で初期化(Initialize)</h2>
+        <pre class="language-javascript"><code>
+        new Array()
+        </code></pre>
+
+        <h3 class="h3">JS</h3>
+        <pre class="language-javascript"><code>
+        let array1 = new Array();
+        </code></pre>
+
+        <h3 class="h2">
+          <label for="" class="badge badge-danger">Point!</label>
+          [] で初期化(Initialize)
+        </h2>
+        <p>JavaScript では new Array() より利用される書き方</p>
+        <pre class="language-javascript"><code>
+        []
+        </code></pre>
+
+        <h3 class="h3">JS</h3>
+        <pre class="language-javascript"><code>
+        let array2 = [];
+        </code></pre>
+
+        <h3 class="h3">Debug（デバッグ）</h3>
+        <p>typeof を利用して配列の型を、Debug で確認してみる</p>
+        <pre class="language-javascript"><code>
+        console.log(typeof array1);
+        console.log(typeof array2);
+
+        //Result
+        object
+        object
+        </code></pre>
+
+        <p>typeof は、JavaScript の型を取得</p>
+        <pre class="language-javascript"><code>
+        typeof 変数
+        </code></pre>
+
+      </div>
+
+      <div id="set">
+        <h2 class="h2">
+          <label for="" class="badge badge-danger">Point!</label>
+          Array の作成
+        </h2>
+        <pre class="language-javascript"><code>
+        ['value1', 'value2', ...]
+        </code></pre>
+        <p>数値の場合は、'' や "" で囲まない</p>
+        <pre class="language-javascript"><code>
+        [100, -100, 10.5, ...]
+        </code></pre>
+
+        <h3 class="h3">JS</h3>
+        <pre class="language-javascript"><code>
+        let cities = ['Tokyo', 'USA', 'China'];
+        </code></pre>
+      </div>
+
+      <div id="length">
+        <h2 class="h2">
+          <label for="" class="badge badge-danger">Point!</label>
+          length プロパティ
+        </h2>
+        <p>Array の長さを取得するプロパティ</p>
+        <pre class="language-javascript"><code>
+        Array.length
+        </code></pre>
+
+        <h3 class="h3">JS</h3>
+        <pre class="language-javascript"><code>
+        let length = cities.length;
+        </code></pre>
+
+        <h3 class="h3">Debug</h3>
+        <pre class="language-javascript"><code>
+        3
+        </code></pre>
+      </div>
+
+      <div><a href="../index.html">Back</a></div>
+    </div>
+
+    <script src="../js/jquery-3.5.0.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script src="../js/bootstrap/bootstrap.min.js"></script>
+    <script src="../js/prism.js"></script>
+    <script src="../js/ruby.js"></script>
+</body>
+
+</html>
