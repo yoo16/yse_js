@@ -20,21 +20,61 @@
 
     <h2 class="h2">参考</h2>
     <ul class="list-group">
-      <li class="list-group-item"><a
-          href="https://developer.mozilla.org/ja/docs/Learn/JavaScript/First_steps/A_first_splash"
+      <li class="p-1"><a href="https://developer.mozilla.org/ja/docs/Learn/JavaScript/First_steps/A_first_splash"
           target="_blank">https://developer.mozilla.org/ja/docs/Learn/JavaScript/First_steps/A_first_splash</a></li>
     </ul>
 
     <div>
 
-      <div class="form">
-        <label for="guessField">数字を入力してください: </label>
-        <input type="text" id="guessField" class="guessField">
-        <input type="submit" value="予想を入力" class="guessSubmit">
+      <div id="question">
+        <h2 class="h2">Question</h2>
+        <ol class="">
+          <li class="p-1">1 から 100 までの数字をランダムに一つ生成</li>
+          <li class="p-1">プレイヤーの予想した回数を記録（最初は 1 回）</li>
+          <li class="p-1">プレイヤーが数字が何かを予想する方法を用意</li>
+          <li class="p-1">予想が入力されたら、プレイヤーが以前の予想を見られるように、どこかに記録</li>
+          <li class="p-1">入力された数字が正しいかどうかを調べる</li>
+          <li class="p-1">入力された数字が正しい場合...
+            <ol>
+              <li>正解したお祝いのメッセージを表示</li>
+              <li>プレイヤーが次の予想をできないようにする</li>
+              <li>プレイヤーが次のゲームを始められるようなコントロールを表示</li>
+            </ol>
+          </li>
+          <li class="p-1">プレイヤーの予想が間違いで、予想回数の上限にはまだ達していない場合...
+            <ol>
+              <li>プレイヤーが間違っていることを表示</li>
+              <li>次の予想を入力</li>
+              <li>予想回数に 1 を加算</li>
+            </ol>
+          </li>
+          <li class="p-1">プレイヤーの予想が間違いで、予想回数の上限に達した場合...
+            <ol>
+              <li>プレイヤーにゲームオーバーを表示</li>
+              <li>プレイヤーが次の予想をできないようにする</li>
+              <li>プレイヤーが次のゲームをスタートできるようにコントロールを表示</li>
+            </ol>
+          </li>
+          <li class="p-1">ゲームが再開されたら、画面とロジックが完全にリセットして「1」に戻る</li>
+        </ol>
       </div>
 
-      <h2 class="h2">HTML</h2>
+      <h2 class="h2">Sample</h2>
+      <a href="sample.html" target="_blank">数字当てゲーム</a>
 
+      <h2 class="h2">HTML</h2>
+      <h3 class="h3">ゲームステータス</h3>
+      <p class="alert alert-info" role="alert">ゲームスタータスをテキストやHTMLで表示</p>
+      <script type="text/plain" class="language-markup">
+      <div class="resultParas">
+        <p class="guesses"></p>
+        <p class="lastResult"></p>
+        <p class="lowOrHi"></p>
+      </div>
+      </script>
+
+      <h3 class="h3">ゲームコントロール</h3>
+      <p class="alert alert-info">プレイヤーが予想(Guess）するエリア</p>
       <script type="text/plain" class="language-markup">
       <div class="form">
         <label for="guessField">数字を入力してください: </label>
@@ -43,84 +83,533 @@
       </div>
       </script>
 
-      <h2 class="h2">JS</h2>
-      <pre class="language-javascript"><code>
+      <div id="functions">
+        <h2 class="h2">関数 function() の作成</h2>
+        <pre class="language-javascript"><code>
+        function ファンクション名() { }
+        </code></pre>
+
+        <h3 class="h3">機能ごとに function() を定義</h3>
+        <pre class="language-javascript"><code>
+        //Game Over
+        function setGameOver() {
+        }
+  
+        //Reset Game
+        function resetGame() {
+        }
+  
+        //Check guess
         function checkGuess() {
-          let userGuess = Number(guessField.value);
-          if (guessCount === 1) {
-              guesses.textContent = '前回の予想: ';
+        }
+        </code></pre>
+      </div>
+
+      <div id="game_params">
+        <h2 class="h2">ゲームデータの変数設定</h2>
+        <pre class="language-javascript"><code>
+        let randomNumber = Math.floor(Math.random() * 100) + 1;
+
+        const guesses = document.querySelector('.guesses');
+        const lastResult = document.querySelector('.lastResult');
+        const lowOrHi = document.querySelector('.lowOrHi');
+
+        const guessSubmit = document.querySelector('.guessSubmit');
+        const guessField = document.querySelector('.guessField');
+
+        let guessCount = 1;
+        let resetButton;
+        </code></pre>
+      </div>
+
+      <table class="table table-responsive">
+        <tr>
+          <th>randomNumber</th>
+          <td>問題の答え</td>
+        </tr>
+        <tr>
+          <th>guesses</th>
+          <td>予想のDOM</td>
+        </tr>
+        <tr>
+          <th>lastResult</th>
+          <td>ゲームステータス</td>
+        </tr>
+        <tr>
+          <th>lowOrHi</th>
+          <td>ゲームのヒント</td>
+        </tr>
+        <tr>
+          <th>guessSubmit</th>
+          <td>予想ボタン</td>
+        </tr>
+        <tr>
+          <th>guessField</th>
+          <td>予想テキストフィールド</td>
+        </tr>
+        <tr>
+          <th>guessCount</th>
+          <td>予想の回数</td>
+        </tr>
+        <tr>
+          <th>resetButton</th>
+          <td>リセットボタン</td>
+        </tr>
+      </table>
+
+      <div>
+        <ul class="list-group">
+          <li class="list-group-item"><a href="#math_random">Math.random() メソッド</a></li>
+          <li class="list-group-item"><a href="#math_floor">Math.floor() メソッド</a></li>
+          <li class="list-group-item"><a href="#query_selector">querySelector メソッド</a></li>
+        </ul>
+      </div>
+
+      <div id="math_random">
+        <h3 class="h3">Math.random() メソッド</h3>
+        <p class="alert alert-info">ランダムな数字を返す</p>
+        <pre class="language-javascript"><code>
+        Math.random()
+        </code></pre>
+      </div>
+
+      <div id="math_floor">
+        <h3 class="h3">Math.floor()メソッド</h3>
+        <p class="alert alert-info">数字の切り下げ</p>
+        <pre class="language-javascript"><code>
+        Math.floor(number)
+        </code></pre>
+
+        <h4 class="h4">Sample</h4>
+        <pre class="language-javascript"><code>
+        console.log(Math.floor(5.95));
+        // expected output: 5
+
+        console.log(Math.floor(5.05));
+        // expected output: 5
+        </code></pre>
+      </div>
+
+      <div id="query_selector">
+        <h3 class="h3">querySelector() メソッド</h3>
+        <p class="alert alert-info">
+          指定されたセレクター(selector)から、HTML内の最初の Element（要素）を返す
+        </p>
+        <pre class="language-javascript"><code>
+        document.querySelector(selectors)
+        </code></pre>
+
+        <h4 class="h4">class=guesses を選択</h4>
+        <h5 class="h5">HTML</h5>
+        <script type="text/plain" class="language-markup">
+        <p class="guesses"></p>
+        </script>
+
+        <h5 class="h5">JS</h5>
+        <pre class="language-javascript"><code>
+        const guesses = document.querySelector('.guesses');
+        </code></pre>
+      </div>
+
+      <div id="add_event_listener">
+        <h2 class="h2">イベント</h2>
+        <h3 class="h3">
+          addEventListener() メソッド
+        </h3>
+        <p class="alert alert-info">
+          Node にイベントを追加する
+          <br>
+          type にイベントのタイプを設定し、イベント発生後に listener（関数）を実行する
+          <br>
+          第3引数は伝播方法で、未指定の場合、デフォルト: false
+        </p>
+
+        <pre class="language-javascript"><code>
+        target.addEventListener(type, listener, [true/false])
+        </code></pre>
+
+        <h4 class="h4">function() を引数とする方法</h4>
+        <pre class="language-javascript"><code>
+        target.addEventListener(type, function() {
+            alert('Click !');
+        });
+        </code></pre>
+
+        <h4 class="h4">指定した function() を実行する方法</h4>
+        <pre class="language-javascript"><code>
+        target.addEventListener(type, runAlert);
+
+        function runAlert() {
+            alert('Click');
+        }
+        </code></pre>
+
+        <h3 class="h3">guessSubmit をクリックしたら、checkGuess() を実行</h3>
+        <pre class="language-javascript"><code>
+        guessSubmit.addEventListener('click', checkGuess);
+        </code></pre>
+
+        <h4 class="h4">type の例</h4>
+        <a href="https://developer.mozilla.org/ja/docs/Web/Events" target="_blank">イベントリファレンス</a>
+        <h4 class="h5">マウス</h5>
+          <table class="table table-responsive">
+            <tr>
+              <th>click</th>
+              <td>クリックしたとき（mousedown と mouseup）</td>
+            </tr>
+            <tr>
+              <th>mousedown</th>
+              <td>ターゲット内でマウスをダウンしたとき</td>
+            </tr>
+            <tr>
+              <th>mouseup</th>
+              <td>ターゲット内でマウスをアップしたとき</td>
+            </tr>
+            <tr>
+              <th>mousemove</th>
+              <td>マウスカーソルがターゲットの中に移動したとき</td>
+            </tr>
+            <tr>
+              <th>mouseout</th>
+              <td>マウスカーソルがターゲットの外に移動したとき</td>
+            </tr>
+          </table>
+
+          <h5 class="h5">INPUT</h5>
+          <table class="table table-responsive">
+            <tr>
+              <th>select</th>
+              <td>フィールドで文字が選択されたとき</td>
+            </tr>
+            <tr>
+              <th>submit</th>
+              <td>submit ボタンが押されたとき</td>
+            </tr>
+            <tr>
+              <th>focus</th>
+              <td>ターゲット内でマウスをアップしたとき</td>
+            </tr>
+            <tr>
+              <th>blur</th>
+              <td>ターゲットがフォーカスを失ったとき</td>
+            </tr>
+          </table>
+
+          <h5 class="h5">その他</h5>
+          <table class="table table-responsive">
+            <tr>
+              <th>load</th>
+              <td>読み込みが完了</td>
+            </tr>
+            <tr>
+              <th>scroll</th>
+              <td>スクロール位置が変更されたとき</td>
+            </tr>
+            <tr>
+              <th>resize</th>
+              <td>ターゲットのサイズが変更されたとき</td>
+            </tr>
+          </table>
+      </div>
+
+      <h2 class="h2">初期設定と関数定義の状態</h2>
+      <div>
+        <pre class="language-javascript"><code>
+        let randomNumber = Math.floor(Math.random() * 100) + 1;
+
+        const guesses = document.querySelector('.guesses');
+        const lastResult = document.querySelector('.lastResult');
+        const lowOrHi = document.querySelector('.lowOrHi');
+        const guessSubmit = document.querySelector('.guessSubmit');
+        const guessField = document.querySelector('.guessField');
+
+        let guessCount = 1;
+        let resetButton;
+
+        guessSubmit.addEventListener('click', checkGuess);
+
+        function setGameOver() {
+        }
+
+        function resetGame() {
+        }
+
+        function checkGuess() {
+        }
+        </code></pre>
+      </div>
+
+
+      <div id="check_guess">
+        <h2 class="h2">checkGuess() の実装</h2>
+        <script type="text/plain" class="language-markup">
+        <div class="form">
+          <label for="guessField">数字を入力してください: </label>
+          <input type="text" id="guessField" class="guessField">
+          <input type="submit" value="予想を入力" class="guessSubmit">
+        </div>
+        </script>
+
+        <h3 class="h3">JS</h3>
+        <pre class="language-javascript"><code>
+        function checkGuess() {
+            let userGuess = Number(guessField.value);
+            if (guessCount === 1) {
+                guesses.textContent = '前回の予想: ';
+            }
+        
+            guesses.textContent += userGuess + ' ';
+        
+            if (userGuess === randomNumber) {
+                lastResult.textContent = 'おめでとう! 正解です!';
+                lastResult.style.backgroundColor = 'green';
+                lowOrHi.textContent = '';
+                setGameOver();
+            } else if (guessCount === 10) {
+                lastResult.textContent = '!!!ゲームオーバー!!!';
+                lowOrHi.textContent = '';
+                setGameOver();
+            } else {
+                lastResult.textContent = '間違いです!';
+                lastResult.style.backgroundColor = 'red';
+                if (userGuess && randomNumber) {
+                    lowOrHi.textContent = '今の予想は小さすぎです!もっと大きな数字です。';
+                } else if (userGuess && randomNumber) {
+                    lowOrHi.textContent = '今の予想は大きすぎです!もっと小さな数字です。';
+                }
+            }
+        }
+        </code></pre>
+
+        <h3 class="h3">value プロパティ</h3>
+        <p class="alert alert-info">
+          DOMの value を取得や設定する
+        </p>
+
+        <input id="target" type="text" value="10">
+
+        <script type="text/plain" class="language-markup">
+        <input id="target" type="text" value="10">
+        </script>
+
+        <h4 class="h4">値の取得</h4>
+        <pre class="language-javascript"><code>
+        let target = document.getElementById('target');
+        let value = target.value
+
+        console.log(value);
+        //10
+        </code></pre>
+
+        <h4 class="h4">値の設定</h4>
+        <pre class="language-javascript"><code>
+        let target = document.getElementById('target');
+        target.value = 20
+        console.log(target.value)
+        //20
+        </code></pre>
+
+        <h3 class="h3">guessField の value を設定</h3>
+        <pre class="language-javascript"><code>
+        let userGuess = Number(guessField.value);
+        </code></pre>
+
+        <div id="number_constractor">
+          <h3 class="h3">Number() コンストラクタ</h3>
+          <p class="alert alert-info">文字列を Number オブジェクトに変換する</p>
+
+          <pre class="language-javascript"><code>
+          console.log(Number('12345'));
+          console.log(Number('-500'));
+          </code></pre>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="h2">setGameOver() の実装</h2>
+        <pre class="language-javascript"><code>
+          function setGameOver() {
+              guessField.disabled = true;
+              guessSubmit.disabled = true;
+
+              resetButton = document.createElement('button');
+              resetButton.textContent = '新しいゲームを始める';
+
+              document.body.appendChild(resetButton);
+
+              resetButton.addEventListener('click', resetGame);
           }
-      
-          guesses.textContent += userGuess + ' ';
-      
-          if (userGuess === randomNumber) {
-              lastResult.textContent = 'おめでとう! 正解です!';
-              lastResult.style.backgroundColor = 'green';
-              lowOrHi.textContent = '';
-              setGameOver();
-          } else if (guessCount === 10) {
-              lastResult.textContent = '!!!ゲームオーバー!!!';
-              lowOrHi.textContent = '';
-              setGameOver();
-          } else {
-              lastResult.textContent = '間違いです!';
-              lastResult.style.backgroundColor = 'red';
-              if (userGuess && randomNumber) {
-                  lowOrHi.textContent = '今の予想は小さすぎです!もっと大きな数字です。';
-              } else if (userGuess && randomNumber) {
-                  lowOrHi.textContent = '今の予想は大きすぎです!もっと小さな数字です。';
-              }
+          </code></pre>
+      </div>
+
+      <div>
+        <ul class="list-group">
+          <li class="list-group-item"><a href="#disabled_property">disabled プロパティ</a></li>
+          <li class="list-group-item"><a href="#create_element">createElement() メソッド</a></li>
+          <li class="list-group-item"><a href="#text_content">textContent プロパティ</a></li>
+          <li class="list-group-item"><a href="#append_child">appendChild() メソッド</a></li>
+        </ul>
+      </div>
+
+      <div id="disabled_property">
+        <h3 class="h3">disabled プロパティ</h3>
+        <p class="alert alert-info">HTML要素（element)の無効・有効</p>
+        <pre class="language-javascript"><code>
+        target.disabled = true/false
+        </code></pre>
+        <p class="alert alert-dark">true : 無効、false: 有効</p>
+
+        <h4 class="h4">guessField と guessSubmit を無効にする</h4>
+        <pre class="language-javascript"><code>
+          guessField.disabled = true;
+          guessSubmit.disabled = true;
+          </code></pre>
+      </div>
+
+      <div id="create_element">
+        <h3 class="h3">createElement() メソッド</h3>
+        <p class="alert alert-info">HTML要素（element)を作成する</p>
+        <pre class="language-javascript"><code>
+          target.createElement(Selector)
+          </code></pre>
+
+        <h4 class="h4">button タグを作成する</h4>
+        <pre class="language-javascript"><code>
+        resetButton = document.createElement('button')
+        </code></pre>
+      </div>
+
+      <div id="text_content">
+        <h3 class="h3">textContent プロパティ</h3>
+        <p class="alert alert-info">Node のテキストを設定、取得するプロパティ</p>
+        <pre class="language-javascript"><code>
+          resetButton.textContent = '新しいゲームを始める'
+          </code></pre>
+      </div>
+
+      <div id="append_child">
+        <h3 class="h3">appendChild() メソッド</h3>
+        <p class="alert alert-info">親Nodeに、Nodeを追加する</p>
+        <pre class="language-javascript"><code>
+          ParentNode.appendChild(ChildNode)
+          </code></pre>
+
+        <h4 class="h4">resetButtonを body に追加</h4>
+        <p class="alert alert-info">
+          body タグに resetButton を追加する
+        </p>
+
+        <pre class="language-javascript"><code>
+          document.body.appendChild(resetButton)
+          </code></pre>
+      </div>
+
+      <div>
+        <h2 class="h2">resetGame() の実装</h2>
+        <pre class="language-javascript"><code>
+        function resetGame() {
+            guessCount = 1;
+            const resetParas = document.querySelectorAll('.resultParas p');
+            for (let i = 0; i < resetParas.length; i++) {
+                resetParas[i].textContent = '';
+            }
+        
+            resetButton.parentNode.removeChild(resetButton);
+            guessField.disabled = false;
+            guessSubmit.disabled = false;
+        
+            guessField.value = '';
+            guessField.focus();
+            lastResult.style.backgroundColor = 'white';
+        
+            randomNumber = Math.floor(Math.random() * 100) + 1;
+        }
+        </code></pre>
+
+        <div id="query_selector_all">
+          <h3 class="h3">querySelectorAll() メソッド</h3>
+          <p class="alert alert-info">
+            指定されたセレクター(selector)から、HTML内の全ての Element（要素）を NodeList で返す
+            <br>
+            <sapn class="text-danger">Array ではないので注意</sapn>
+          </p>
+          <pre class="language-javascript"><code>
+          document.querySelectorAll(selectors)
+          </code></pre>
+
+          <h4 class="h4">class=resultParas 内の p を選択</h4>
+          <h5 class="h5">HTML</h5>
+          <script type="text/plain" class="language-markup">
+          <div class="resultParas">
+            <p class="guesses"></p>
+            <p class="lastResult"></p>
+            <p class="lowOrHi"></p>
+          </div>
+          </script>
+
+          <h5 class="h5">JS</h5>
+          <pre class="language-javascript"><code>
+          const resetParas = document.querySelectorAll('.resultParas p');
+          </code></pre>
+        </div>
+
+        <div id="for_iterator">
+          <h3 class="h3">for</h3>
+          <pre class="language-javascript"><code>
+          const resetParas = document.querySelectorAll('.resultParas p');
+          for (let i = 0; i < resetParas.length; i++) {
+              resetParas[i].textContent = '';
           }
-      }
-      </code></pre>
+          </code></pre>
+        </div>
+
+        <div id="each_iterator">
+          <h3 class="h3">forEach</h3>
+          <pre class="language-javascript"><code>
+          const resetParas = document.querySelectorAll('.resultParas p');
+          resetParas.forEach(function(element, index) {
+              element.textContent = '';
+          });
+          </code></pre>
+        </div>
+
+        <div id="remove_child">
+          <h3 class="h3">removeChild() メソッド</h3>
+
+          <h4 class="h4">resetButton </h4>
+          <pre class="language-javascript"><code>
+          resetButton.parentNode.removeChild(resetButton);
+          //or
+          document.body.removeChild(resetButton);
+          </code></pre>
+        </div>
+
+        <div id="focus">
+          <h3 class="h3">focus() メソッド</h3>
+          <p class="alert alert-info">
+            Element(要素)にフォーカスを設定
+          </h4>
+
+          <pre class="language-javascript"><code>
+          target.focus()
+          </code></pre>   
+
+          <h4 class="h4">guessField フィールドにフォーカスする</h4>
+          <pre class="language-javascript"><code>
+          guessField.focus()
+          </code></pre>   
+        </div>
+      </div>
+
+      <div><a href="../index.html">Back</a></div>
     </div>
 
-    <div>
-      <h2 class="h2">function()</h2>
-      <p>
-        <span class="ruby" word="関数" kana="かんすう"></span> を<span class="ruby" word="作成"
-          kana="さくせい"></span>する
-      </p>
-      <pre class="language-javascript"><code>
-      /**
-       * set game
-       */
-      function setGameOver() {
+    <script src="../js/jquery-3.5.0.min.js"></script>
+    <script src="js/main.js"></script>
 
-      }
-
-      //set game
-      function resetGame() {
-
-      }
-
-      function checkGuess() {
-
-      }
-      </code></pre>
-    </div>
-
-    <div id="variable">
-      <h2 class="h2">変数</h2>
-
-      <h3 class="h3">JS:変数を利用しない場合</h3>
-      <pre class="language-javascript"><code>
-      $('#itemList li').removeClass('dummy'); //class から dummy を削除
-      $('#itemList li').addClass('item');     //class に item を追加
-      $('#itemList li').css('color', 'red');  //css に color="red" を追加
-      </code></pre>
-
-    </div>
-
-    <div><a href="../index.html">Back</a></div>
-  </div>
-
-  <script src="../js/jquery-3.5.0.min.js"></script>
-  <script src="js/main.js"></script>
-
-  <script src="../js/bootstrap/bootstrap.min.js"></script>
-  <script src="../js/prism.js"></script>
-  <script src="../js/ruby.js"></script>
+    <script src="../js/bootstrap/bootstrap.min.js"></script>
+    <script src="../js/prism.js"></script>
+    <script src="../js/ruby.js"></script>
 </body>
 
 </html>

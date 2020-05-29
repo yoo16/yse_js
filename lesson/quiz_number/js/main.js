@@ -1,66 +1,12 @@
 
-/**
- * game over
- */
-function setGameOver() {
-    guessField.disabled = true;
-    guessSubmit.disabled = true;
-    resetButton = document.createElement('button');
-    resetButton.textContent = '新しいゲームを始める';
-    document.body.appendChild(resetButton);
-    resetButton.addEventListener('click', resetGame);
-}
 
-/**
- * rest game
- */
-function resetGame() {
-    guessCount = 1;
+let target = document.getElementById('target');
+let value = target.value
+console.log(value)
 
-    var resetParas = document.querySelectorAll('.resultParas p');
-    for (var i = 0; i < resetParas.length; i++) {
-        resetParas[i].textContent = '';
-    }
+target.value = 20
+console.log(target.value)
 
-    resetButton.parentNode.removeChild(resetButton);
-
-    guessField.disabled = false;
-    guessSubmit.disabled = false;
-    guessField.value = '';
-    guessField.focus();
-
-    lastResult.style.backgroundColor = 'white';
-
-    randomNumber = Math.floor(Math.random() * 100) + 1;
-}
-
-/**
- * guess
- */
-function checkGuess() {
-    let userGuess = Number(guessField.value);
-    if (guessCount === 1) {
-        guesses.textContent = '前回の予想: ';
-    }
-
-    guesses.textContent += userGuess + ' ';
-
-    if (userGuess === randomNumber) {
-        lastResult.textContent = 'おめでとう! 正解です!';
-        lastResult.style.backgroundColor = 'green';
-        lowOrHi.textContent = '';
-        setGameOver();
-    } else if (guessCount === 10) {
-        lastResult.textContent = '!!!ゲームオーバー!!!';
-        lowOrHi.textContent = '';
-        setGameOver();
-    } else {
-        lastResult.textContent = '間違いです!';
-        lastResult.style.backgroundColor = 'red';
-        if (userGuess && randomNumber) {
-            lowOrHi.textContent = '今の予想は小さすぎです!もっと大きな数字です。';
-        } else if (userGuess && randomNumber) {
-            lowOrHi.textContent = '今の予想は大きすぎです!もっと小さな数字です。';
-        }
-    }
-}
+console.log(Number('12345'));
+console.log(Number('-500'));
+console.log(parseInt('100px'));

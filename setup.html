@@ -17,21 +17,16 @@
   <div id="content" class="container">
     <p><a href="index.html">Back</a></p>
 
-    <h1 class="h1"><span class="ruby" word="環境構築" kana="かんきょうこうちく"></span></h1>
+    <h1 class="h1">環境構築</h1>
 
     <div id="vscode">
       <h2 class="h2">VSCode(Visual Studio Code) </h2>
-      <ul>
-        <li>Microsoftが<span class="ruby" word="提供" kana="ていきょう"></span>する<span class="ruby" word="無償"
-            kana="むしょう"></span>のテキストエディタ</li>
-        <li>Web<span class="ruby" word="開発" kana="かいはつ"></span>の<span class="ruby" word="現場"
-            kana="げんば"></span>で、シェアを<span class="ruby" word="拡大" kana="かくだい"></span></li>
-        <li>Windows、Mac、Linux で<span class="ruby" word="利用可能" kana="りようかのう"></span></li>
-        <li><span class="ruby" word="効率" kana="こうりつ"></span>よくコーディングできる<span class="ruby" word="高機能"
-            kana="こうきのう"></span>エディタ</li>
-        <li>
-          「VSCode」で<span class="ruby" word="検索" kana="けんさく"></span>
-        </li>
+      <ul class="list-group">
+        <li class="list-group-item">Microsoftが提供する無償のテキストエディタ</li>
+        <li class="list-group-item">Web開発現場でシェアを拡大</li>
+        <li class="list-group-item">Windows、Mac、Linux で利用可能</li>
+        <li class="list-group-item">効率よくコーディングできるエディタ</li>
+        <li class="list-group-item">「VSCode」で検索</li>
       </ul>
 
       <div>
@@ -62,7 +57,7 @@
             <td>Shift + Command + E</td>
           </tr>
           <tr>
-            <td><span class="ruby" word="機能拡張" kana="きのうかくちょう"></span></td>
+            <td>機能拡張</td>
             <td>Shift + Ctrl + X</td>
             <td>Shift + Command + X</td>
           </tr>
@@ -71,79 +66,35 @@
 
       <div id="vscode_ex">
         <h3 class="h3">Snippets</h3>
-        <div>
-          コード<span class="ruby" word="入力" kana="にゅうりょく"></span>をサポートしてくれる<span class="ruby" word="機能" kana="きのう"></span>
-        </div>
+        <p class="alert alert-info">
+          コード入力をサポートしてくれる機能
+        </p>
 
-        <h3 class="h3"><span class="ruby" word="機能拡張" kana="きのうかくちょう"></span>インストール</h3>
+        <h3 class="h3">機能拡張インストール</h3>
         <h4 class="h4">HTML Snippets</h4>
+        <p class="alert alert-info">ショートカットで html タグを入力できる</p>
         <div>
           <img src="images/vscode_ex_html_snippets.png" alt="" class="vscode_ex_image">
         </div>
 
-        <p class="p-3 mt-2 bg-light text-dark">ショートカットで html タグを<span class="ruby" word="入力" kana="にゅうりょく"></span>できる
-        </p>
-
         <h4 class="h4">CSS Formatter</h4>
+        <p class="alert alert-info">CSSを整形してくれる</p>
         <div>
           <img src="images/vscode_ex_css_formatter.png" alt="" class="vscode_ex_image">
         </div>
 
-        <p class="p-3 mt-2 bg-light text-dark">CSSを<span class="ruby" word="整形" kana="せいけい"></span>してくれる</p>
-
         <h4 class="h4">JavaScript (ES6) code snippets</h4>
+        <p class="alert alert-info">JavaScript 用のスニペット</p>
         <div>
           <img src="images/vscode_ex_js_snippets.png" alt="" class="vscode_ex_image">
         </div>
 
         <h4 class="h4">Live Server</h4>
+        <p class="alert alert-info">Webサーバをたてなくても、擬似的に表示できる</p>
         <div>
           <img src="images/vscode_ex_liveserver.png" alt="">
         </div>
-        <p class="p-3 mt-2 bg-light text-dark">Webサーバをたてなくても、<span class="ruby" word="擬似的" kana="ぎじてき"></span>に表示できる</p>
       </div>
-
-    </div>
-
-    <div id="git">
-      <h2 class="h2">Git</h2>
-      <h3 class="h3">
-        <img clsss="icon" src="images/apple_logo.png" width="60">
-        Mac：<span class="ruby" word="標準" kana="ひょうじゅん"></span>インストール
-      </h3>
-
-      <h4 class="h4"><span class="ruby" word="動作確認" kana="どうさかくにん"></span></h4>
-      <pre class="language-bash"><code>
-$ git --version
-git version 2.21.1 (Apple Git-122.3)
-      </code></pre>
-
-      <h3 class="h3">
-        <img clsss="icon" src="images/windows_logo.png" width="60">
-        Windows：インストーラダウンロード
-      </h3>
-      <h4 class="h4">ダウンロード</h4>
-      <div class="mt-2 mb-2">
-        <a class="" href="https://git-scm.com/" target="_blank">https://git-scm.com/</a>
-      </div>
-      <div>
-        <img src="images/git_top.png" alt="">
-      </div>
-
-      <h4 class="h4">Clone （<span class="ruby" word="作業" kana="さぎょう"></span>コピー）</h4>
-      <pre class="language-bash"><code>
-      $ git clone https://xxxx.com/xxxx.git
-      </code></pre>
-      <p><span class="ruby" word="基本的" kana="きほんてき"></span>に<span class="ruby" word="初回" kana="しょかい"></span>に<span
-          class="ruby" word="利用" kana="りよう"></span>する</p>
-
-      <h4 class="h4">Pull （<span class="ruby" word="更新" kana="こうしん"></span>）</h4>
-      <pre class="language-bash"><code>
-      $ git pull
-      </code></pre>
-      <p><span class="ruby" word="作業" kana="さぎょう"></span>プロジェクトに<span class="ruby" word="対象" kana="たいしょう"></span>の
-        git<span class="ruby" word="情報" kana="じょうほう"></span>（.git）が存在すれば、このコマンドで<span class="ruby" word="最新"
-          kana="さいしん"></span>にアップデートできる</p>
 
     </div>
 
