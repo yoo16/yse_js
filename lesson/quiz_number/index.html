@@ -24,7 +24,6 @@
     </ul>
 
     <div>
-
       <div id="question">
         <h2 class="h2">Question</h2>
         <ol class="">
@@ -166,7 +165,7 @@
 
       <div id="math_random">
         <h3 class="h3">Math.random() メソッド</h3>
-        <p class="alert alert-info">ランダムな数字を返す</p>
+        <p class="alert alert-info">ランダムな数字（0以上、1未満）を返す</p>
         <pre class="language-javascript"><code>
         Math.random()
         </code></pre>
@@ -186,6 +185,11 @@
 
         console.log(Math.floor(5.05));
         // expected output: 5
+        </code></pre>
+
+        <h4 class="h4">答えを作成する</h4>
+        <pre class="language-javascript"><code>
+        let randomNumber = Math.floor(Math.random() * 100) + 1;
         </code></pre>
       </div>
 

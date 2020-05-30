@@ -9,7 +9,7 @@ let flower3 = "ヒマワリ";
  * array
  */
 let flowers = ['サクラ', 'チューリップ', 'ヒマワリ'];
-console.log(flowers);
+//console.log(flowers);
 
 /**
  * new Array()
@@ -28,6 +28,27 @@ console.log(array2);
 console.log(typeof array2);
 
 /**
+ * object - array
+ */
+let score = {
+    user1: [90, 80, 74],
+    user2: [76, 52, 68]
+}
+console.log(score);
+console.log(score.user2);
+
+/**
+ * array - array
+ */
+var matrix = [
+    [1,2,3],
+    [4,5,6],
+    [7,8,9]
+  ];
+console.log(matrix);
+console.log(matrix[2]);
+
+/**
  * create array
  */
 let cities = ['Tokyo', 'Osaka', 'Yokohama'];
@@ -40,12 +61,53 @@ let length = cities.length;
 console.log(length);
 
 /**
- * array index
+ * array push
  */
-cities[3] = 'Nagoya';
+cities.push('Nagoya');
+console.log(cities);
 
+/**
+ * array pop
+ */
+cities.pop();
+console.log(cities);
+
+/**
+ * array shift
+ */
+cities.shift();
+console.log(cities);
+
+/**
+ * array unshift
+ */
+cities.unshift('Tokyo');
+console.log(cities);
+
+/**
+ * array indexOf
+ */
+let index = cities.indexOf('Tokyo');
+console.log(index);
+
+/**
+ * array splice
+ */
+cities.splice(1, 1);
+console.log(cities);
+
+/** 
+ * array iterator
+ */
+cities.forEach(function(city, index, array) {
+    console.log(city);
+    console.log(index);
+});
+
+/** 
+ * array object iterator
+ */
 let prefectures = [
-    { code: "", label: "-- 都道府県 --" },
     { code: "1", label: "北海道" },
     { code: "2", label: "青森県" },
     { code: "3", label: "岩手県" },
@@ -94,3 +156,9 @@ let prefectures = [
     { code: "46", label: "鹿児島県" },
     { code: "47", label: "沖縄県" }
 ];
+
+prefectures.forEach(function(prefecture, index) {
+    // console.log(prefecture.code);
+    // console.log(prefecture.label);
+    // console.log(index);
+});
