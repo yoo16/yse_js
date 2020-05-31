@@ -15,66 +15,291 @@
 <body header-height="70">
 
   <div id="content" class="container">
-    <p class="mt-4"><a href="index.html">Back</a></p>
+    <p class=""><a href="index.html">Back</a></p>
 
-    <h1 class="h1">プロジェクト作成</h1>
+    <h1 class="h1">VSCode & Snippet</h1>
 
-    <div id="vscode">
-      <h2 class="h2">プロジェクトディレクトリ作成</h2>
-      <p class="mt-4">1) 任意の場所に、プロジェクトディレクトリを作成</p>
+    <div id="create_project">
+      <h2 class="h2">プロジェクト作成</h2>
+      <p class="alert alert-info mt-4">1) 任意の場所に、プロジェクトディレクトリを作成</p>
       <div>
         <img src="images/project_create_1.png" width="100" alt="">
       </div>
 
-      <p class="mt-4">2) VSCodeを起動</p>
+      <p class="alert alert-info mt-4">2) VSCodeを起動</p>
       <div>
         <img src="images/vscode.png" width="100" alt="">
       </div>
 
-      <p class="mt-4">3) エクスプローラーから「フォルダを開く...」もしくは、メニューから「開く...」を選択</p>
+      <p class="alert alert-info mt-4">3) エクスプローラーから「フォルダを開く...」もしくは、メニューから「開く...」を選択</p>
       <div>
         <img src="images/vscode_select_folder.png" width="300" alt="">
         <img src="images/vscode_select_folder_menu.png" width="300" alt="">
       </div>
 
-      <p class="mt-4">4) プロジェクトディレクトリを選択
+      <p class="alert alert-info mt-4">4) プロジェクトディレクトリを選択
       <div>
         <img src="images/vscode_open_folder.png" width="500" alt="">
       </div>
 
-      <p class="mt-4">5) Exproler を右クリックし「新しいファイル」を選択</p>
+      <p class="alert alert-info mt-4">5) Exproler を右クリックし「新しいファイル」を選択</p>
       <div>
         <img src="images/vscode_new_file_menu.png" width="500" alt="">
       </div>
 
-      <p class="mt-4">6) 「index.html」 ファイルを作成</p>
+      <p class="alert alert-info mt-4">6) 「index.html」 ファイルを作成</p>
       <div>
         <img src="images/vscode_new_file_html.png" width="500" alt="">
       </div>
 
-      <p class="mt-4">7) Exproler を開き、右クリックで「新しいフォルダー」を選択する</p>
+      <p class="alert alert-info mt-4">7) Exproler を開き、右クリックで「新しいフォルダー」を選択</p>
       <div>
         <img src="images/vscode_new_folder_menu.png" width="500" alt="">
       </div>
 
-      <p class="mt-4">8) 「js」 ディレクトリを作成</p>
+      <p class="alert alert-info mt-4">8) 「js」 ディレクトリを作成</p>
       <div>
         <img src="images/vscode_new_folder_js.png" width="500" alt="">
       </div>
 
-      <p class="mt-4">9) 「js/」に「main.js」 ファイルを作成</p>
+      <p class="alert alert-info mt-4">9) 「js/」に「main.js」 ファイルを作成</p>
       <div>
         <img src="images/vscode_new_file_js.png" width="500" alt="">
       </div>
 
     </div>
 
-  </div>
+    <div id="create_html">
+      <h2 class="h2">HTML作成</h2>
+      <p class="alert alert-info mt-4">1) index.html を開く</p>
+      <p class="alert alert-info mt-4">2) 「html」と入力すると候補がでる</p>
+      <div><img src="images/vscode_auto_correct_html.png" alt="" width="500"></div>
+      <p class="alert alert-info mt-4">3) 「html:5」入力して Tabキーを押すと HTMLが自動作成</p>
+      <div><img src="images/vscode_emmet_html.png" alt="" width="500"></div>
+    </div>
 
-  <script src="js/jquery-3.5.0.min.js"></script>
-  <script src="js/bootstrap/bootstrap.min.js"></script>
-  <script src="js/prism.js"></script>
-  <script src="js/ruby.js"></script>
+    <div id="load_js">
+      <h2 class="h2">JavaScriptファイルを読み込む</h2>
+      <h3 class="h3">Snippet(Emmet) で scriptタグ</h3>
+      <p class="alert alert-info mt-4">1) &lt;/body&gt; の直前に入力カーソルを移動</p>
+      <div><img src="images/vscode_cursor_body.png" alt="" width="300"></div>
+
+      <p class="alert alert-info mt-4">2) 「script:src」を入力し、Tabキーを押すと script タグが自動入力</p>
+      <pre class="language-javascript"><code>
+      &lt;script src=""&gt;&lt;/script&gt;
+      </code></pre>
+
+      <p class="alert alert-info mt-4">3) src="" でカーソルがハイライトした状態で「js/」を入力</p>
+      <div><img src="images/vscode_cursor_src.png" alt="" width="500"></div>
+
+      <p class="alert alert-info mt-4">4) 「main.js」 が選択された状態で Returnキーを押す</p>
+      <div><img src="images/vscode_cursor_src.png" alt="" width="500"></div>
+
+      <p class="alert alert-info mt-4">「js/main.js」 の script タグ</p>
+      <pre class="language-javascript"><code>
+      &lt;body&gt;
+      ...
+      &lt;script src="js/main.js"&gt;&lt;/script&gt;
+      &lt;/body&gt;
+      </code></pre>
+    </div>
+
+    <div id="h1">
+      <h2 class="h2">Snippet(Emmet) の練習</h2>
+      <p class="alert alert-success mt-4">入力途中で候補が表示、選択した候補で Tabキー を押すと自動入力できる</p>
+      <div id="html_h1">
+        <h3 class="h3">h1 タグ</h3>
+        <p class="alert alert-info mt-4">1) 「h1」を入力し、Tabキー</p>
+        <script type="text/plain" class="language-markup">
+      <h1></h1>
+      </script>
+        <p class="alert alert-info mt-4">2) 続けて文字を入力する</p>
+        <script type="text/plain" class="language-markup">
+      <h1>タイトル</h1>
+      </script>
+      </div>
+
+      <div id="html_div_h2">
+        <h3 class="h3">親子要素（Parent & Child Element）</h3>
+        <p class="alert alert-success mt-4">「>」で親子要素を入力</p>
+
+        <pre class="language-javascript"><code>
+        div>h2
+        </code></pre>
+
+        <script type="text/plain" class="language-markup">
+        <div>
+          <h2></h2>
+        </div>
+        </script>
+      </div>
+
+      <div id="html_div-h2">
+        <h3 class="h3">同階層の要素</h3>
+        <p class="alert alert-success mt-4">「+」で同階層で入力</p>
+
+        <pre class="language-javascript"><code>
+        div+p
+        </code></pre>
+
+        <script type="text/plain" class="language-markup">
+        <div></div>
+        <p></p>>
+        </script>
+      </div>
+
+      <div id="html_ul_li">
+        <h3 class="h3">リピートを利用</h3>
+        <p class="alert alert-success mt-4">「*数字」でリピートして入力</p>
+
+        <pre class="language-javascript"><code>
+        ul>li*3
+        </code></pre>
+
+        <p class="alert alert-dark mt-4">「ul」の中に 「li」が3つ作成</p>
+
+        <script type="text/plain" class="language-markup">
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        </script>
+      </div>
+
+      <div id="html_id">
+        <h3 class="h3">id プロパティ</h3>
+        <p class="alert alert-success mt-4">「#文字列」で id プロパティを指定</p>
+
+        <pre class="language-javascript"><code>
+        div#message
+        </code></pre>
+
+        <script type="text/plain" class="language-markup">
+        <div id="message"></div>
+        </script>
+      </div>
+
+      <div id="html_class">
+        <h3 class="h3">class プロパティ</h3>
+        <p class="alert alert-success mt-4">
+          「.文字列」で class プロパティを指定
+          <br>
+          「.」でつなげると複数指定可能
+        </p>
+
+        <pre class="language-javascript"><code>
+        button.btn.btn-primary
+        </code></pre>
+
+        <script type="text/plain" class="language-markup">
+        <button class="btn btn-primary"></button>
+        </script>
+      </div>
+
+      <div id="html_number">
+        <h3 class="h3">連番</h3>
+        <p class="alert alert-success mt-4">
+          「$」で 連番を指定
+        </p>
+
+        <pre class="language-javascript"><code>
+        div.item_$*3
+        </code></pre>
+
+        <script type="text/plain" class="language-markup">
+        <div class="item_1"></div>
+        <div class="item_2"></div>
+        <div class="item_3"></div>
+        </script>
+      </div>
+
+      <div id="html_props">
+        <h3 class="h3">プロパティ複数指定</h3>
+        <p class="alert alert-success mt-4">
+          [] と key=value でプロパティを複数指定
+        </p>
+        <pre class="language-javascript"><code>
+        img[title="title" alt="image name"]
+        </code></pre>
+
+        <script type="text/plain" class="language-markup">
+        <img src="" alt="image name" title="title">
+        </script>
+      </div>
+
+
+      <div id="html_a">
+        <h3 class="h3">要素（Element）にテキストを入力</h3>
+        <p class="alert alert-success mt-4">
+          {} でタグ内のテキスト入力
+        </p>
+
+        <script type="text/plain" class="language-markup">
+        a{リンク}
+        </script>
+
+        <script type="text/plain" class="language-markup">
+        <a href="">リンク</a>
+        </script>
+      </div>
+
+      <div id="html_back">
+        <h3 class="h3">上の階層をもどる</h3>
+        <p class="alert alert-success mt-4">「^」でひとつ上の階層に戻る</p>
+
+        <pre class="language-javascript"><code>
+        div>h2+div^ul>li*3
+        </code></pre>
+
+        <script type="text/plain" class="language-markup">
+        <div>
+          <h2></h2>
+          <div></div>
+        </div>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        </script>
+      </div>
+
+      <div id="html_group">
+        <h3 class="h3">グループ</h3>
+        <p class="alert alert-success mt-4">「()」でグループ化する</p>
+
+        <pre class="language-javascript"><code>
+        (div#message>h2+div)+(div.items>ul>li*2)*2
+        </code></pre>
+
+        <script type="text/plain" class="language-markup">
+        <div id="message">
+          <h2></h2>
+          <div></div>
+        </div>
+        <div class="items">
+          <ul>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+        <div class="items">
+          <ul>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+        </script>
+      </div>
+      
+
+    </div>
+
+    <script src="js/jquery-3.5.0.min.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/prism.js"></script>
+    <script src="js/ruby.js"></script>
 
 </body>
 
