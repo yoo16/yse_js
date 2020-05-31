@@ -96,6 +96,13 @@ console.log(index);
 cities.splice(1, 1);
 console.log(cities);
 
+/**
+ * array splice add
+ */
+cities.splice(1, 0, "Osaka");
+console.log(cities);
+
+
 /** 
  * array iterator
  */
@@ -103,6 +110,15 @@ cities.forEach(function(city, index, array) {
     console.log(city);
     console.log(index);
 });
+
+for (let i=0; i < cities.length; i++) {
+    let city = cities[i];
+    if (city == 'Osaka') {
+        console.log('break');
+        console.log(city);
+        break;
+    }
+}
 
 /** 
  * array object iterator
@@ -157,8 +173,70 @@ let prefectures = [
     { code: "47", label: "沖縄県" }
 ];
 
+/**
+ * foreach
+ */
 prefectures.forEach(function(prefecture, index) {
     // console.log(prefecture.code);
     // console.log(prefecture.label);
     // console.log(index);
 });
+
+/**
+ * map() 1
+ */
+console.log('map()');
+let numbers = [15, 20, 30, 5];
+let map_result1 = numbers.map(number => number * 2);
+console.log(map_result1);
+
+/**
+ * map() 2
+ */
+let map_result2 = numbers.map(function(number) {
+    return number * 2;
+});
+console.log(map_result2);
+
+let map_result3 = numbers.map(calculateMap);
+
+/**
+ * map() 3
+ */
+function calculateMap(number) {
+    return number * 2;
+}
+console.log(map_result3);
+
+/**
+ * some
+ */
+prefectures.some(function(prefecture, index) {
+    if (prefecture.code == '13') {
+        console.log(prefecture.code);
+        console.log(prefecture.label);
+        console.log(index);
+        return;
+    }
+});
+
+/**
+ * concat()
+ */
+console.log('concat()');
+let numbers1 = [1, 2, 3, 4, 5];
+let numbers2 = [6, 7];
+let numbers3 = numbers1.concat(numbers2);
+console.log(numbers3);
+
+/**
+ * find()
+ */
+let prefecture_value = prefectures.find(prefecture => prefecture.code == '13');
+console.log(prefecture_value);
+
+/**
+ * findIndex()
+ */
+let prefecture_index = prefectures.findIndex(prefecture => prefecture.code == '13');
+console.log(prefecture_index);
