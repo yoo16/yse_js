@@ -24,7 +24,7 @@
         Element を作成
       </p>
       <pre class="language-javascript"><code>
-      document.Element('Tag')
+      document.createElement('Tag')
       </code></pre>
 
       <h3 class="h3">JS</h3>
@@ -92,9 +92,45 @@
       </code></pre>
     </div>
 
+    <div id="value_property">
+      <h2 class="h2"><label for="" class="badge badge-danger">Point</label> value プロパティ</h2>
+      <p class="alert alert-info">
+        value プロパティの値を取得・設定
+      </p>
+      <h3 class="h3">取得</h3>
+      <pre class="language-javascript"><code>
+      let value = Element.value
+      </code></pre>
+
+      <h3 class="h3">設定</h3>
+      <pre class="language-javascript"><code>
+      Element.value = 'Value'
+      </code></pre>
+
+
+      <p class="alert alert-info">
+        id=amount の value を15に設定する
+      </p>
+      <input id="amount" type="text" value="">
+
+      <h3 class="h3">HTML</h3>
+      <script type="text/plain" class="language-markup">
+      <input type="amount" value="">
+      </script>
+
+      <h3 class="h3">JS</h3>
+      <pre class="language-javascript"><code>
+      document.getElementById('amount').value = 15;
+      </code></pre>
+
+      <h4 class="h4">style.cssText プロパティ</h4>
+      <pre class="language-javascript"><code>
+      style_element.style.cssText = "background-color: yellow; font-size: 20px;";
+      </code></pre>
+    </div>
 
     <div id="html_style">
-      <h2 class="h2"><label for="" class="badge badge-danger">Point</label> style プロパティ</h2>
+      <h2 class="h2">style プロパティ</h2>
       <p class="alert alert-info">
         style の取得・設定
       </p>
@@ -117,13 +153,14 @@
 
       <h3 class="h3">JS</h3>
       <pre class="language-javascript"><code>
-      let style_element = document.querySelector('div#price');
+      let style_element = document.getElementById('price');
+      //let style_element = document.querySelector('div#price');
       style_element.style.color = '#ff0000';
       style_element.style.border = '1px solid #ff0000';
       style_element.style.padding = '10px';
       </code></pre>
 
-      <h4 class="h4">cssText プロパティ</h4>
+      <h4 class="h4">style.cssText プロパティ</h4>
       <pre class="language-javascript"><code>
       style_element.style.cssText = "background-color: yellow; font-size: 20px;";
       </code></pre>
@@ -136,13 +173,12 @@
         指定した親要素に Element を追加
       </p>
       <pre class="language-javascript"><code>
-      親要素.appendChild();
+      target.appendChild();
       </code></pre>
-
 
       <div id="parent_div">Parent</div>
       <p class="alert alert-info">
-        id=parent_div に p を追加
+        id=parent_div 要素に p タグを追加し、赤色にする
       </p>
       <h3 class="h3">HTML</h3>
       <script type="text/plain" class="language-markup">
@@ -153,46 +189,115 @@
       <pre class="language-javascript"><code>
       let comment_p = document.createElement('p');
       comment_p.innerHTML = 'Child Comment';
+      comment_p.style.color = '#ff0000';
       document.getElementById('parent_div').appendChild(comment_p);
       </code></pre>
     </div>
 
 
     <div id="lesson">
-      <h2 class="h2">練習</h2>
-      <pre class="language-javascript"><code>
-      title.innerHTML = 'City';
-  
-      let city_list = document.getElementById('city_list');
-      let li = document.createElement('li');
-      li.append('Nagoya');
-      city_list.appendChild(li);
-      console.log(city_list);
-      </code></pre>
+      <h2 class="h2">課題</h2>
+
+      <h3 class="h3">HTML</h3>
+      <script type="text/plain" class="language-markup">
+        <div>
+          <h2 id="title"><span>Title</span></h2>
+          <label for="">Select Number</label>
+          <input type="text" id="select_number" value="3">
+          <ul>
+            <li id="result_city_name"></li>
+            <li id="result_lat_lng"></li>
+          </ul>
+          <ul id="city_list">
+            <li>
+              <div class="number">1</div>
+              <div class="city_name">Tokyo</div>
+              <label for="">lat:</label>
+              <input type="text" name="lat" value="35.652832">
+              <label for="">lng:</label>
+              <input type="text" name="lng" value="139.839478">
+            </li>
+            <li>
+              <div class="number">2</div>
+              <div class="city_name">Osaka</div>
+              <label for="">lat:</label>
+              <input type="text" name="lat" value="34.669529">
+              <label for="">lng:</label>
+              <input type="text" name="lng" value="135.497009">
+            </li>
+            <li>
+              <div class="number">3</div>
+              <div class="city_name">Yokohama</div>
+              <label for="">lat:</label>
+              <input type="text" name="lat" value="35.443707">
+              <label for="">lng:</label>
+              <input type="text" name="lng" value="139.638031">
+            </li>
+          </ul>
+        </div>
+      </script>
 
       <div>
-        <h2 id="title"><span>Title</span></h2>
-        <ul id="city_list">
-          <li>
-            <div class="city_name">Tokyo</div>
-            <input type="text" name="number" value="1">
-            <input type="text" name="lat" value="35.652832">
-            <input type="text" name="lng" value="139.839478">
+        <ul class="list-group">
+          <li class="list-group-item">index.htmlファイルの body内に上記の HTMLタグを記述</li>
+          <li class="list-group-item">js/main.js を作成</li>
+          <li class="list-group-item">id=title 要素のテキストを「City」に変更</li>
+          <li class="list-group-item">id=title 要素の色を「青色」に変更</li>
+          <li class="list-group-item">class=city_name 要素を console.log() で全て表示</li>
+          <li class="list-group-item">
+            id=select_number の value と、class=number のテキスト値が一致した同じ階層の
+            city_name 要素のテキストを id=result_city_name に表示する
           </li>
-          <li>
-            <div class="city_name">Osaka</div>
-            <input type="text" name="number" value="2">
-            <input type="text" name="lat" value="34.669529">
-            <input type="text" name="lng" value="135.497009">
-          </li>
-          <li>
-            <div class="city_name">Yokohama</div>
-            <input type="text" name="number" value="3">
-            <input type="text" name="lat" value="35.443707">
-            <input type="text" name="lng" value="139.638031">
+          <li class="list-group-item">
+            同様に id=select_number から lat, lng を取得し、 id=result_lat_lng に表示
+            <br>
+            例）(lat, lng) = (35.443707, 139.638031)
           </li>
         </ul>
       </div>
+
+      <div>
+        <h2 id="title"><span>Title</span></h2>
+        <label for="">index</label>
+        <input type="text" id="select_number" value="3">
+        <ul>
+          <li id="result_city_name"></li>
+          <li id="result_lat_lng"></li>
+        </ul>
+        <ul id="city_list">
+          <li>
+            <div class="number">1</div>
+            <div class="city_name">Tokyo</div>
+            <div class="lat_lng">
+              <label for="">lat:</label>
+              <input type="text" name="lat" value="35.652832">
+              <label for="">lng:</label>
+              <input type="text" name="lng" value="139.839478">
+            </div>
+          </li>
+          <li>
+            <div class="number">2</div>
+            <div class="city_name">Osaka</div>
+            <div class="lat_lng">
+              <label for="">lat:</label>
+              <input type="text" name="lat" value="34.669529">
+              <label for="">lng:</label>
+              <input type="text" name="lng" value="135.497009">
+            </div>
+          </li>
+          <li>
+            <div class="number">3</div>
+            <div class="city_name">Yokohama</div>
+            <div class="lat_lng">
+            <label for="">lat:</label>
+            <input type="text" name="lat" value="35.443707">
+            <label for="">lng:</label>
+            <input type="text" name="lng" value="139.638031">
+            </div>
+          </li>
+        </ul>
+      </div>
+
     </div>
 
     <div><a href="../index.html">Back</a></div>
