@@ -36,15 +36,6 @@
     console.log(li_list);
     //HTMLCollection
 
-    let li = document.createElement('li');
-    title.innerHTML = 'City';
-    li.append('Nagoya');
-    city_list.appendChild(li);
-    console.log(city_list);
-
-    // let target = $('#itemList li');
-    // target.removeClass('item').addClass('item').css('color', 'red');
-
     let foo = '';
     if (true) {
         foo = 'bar';

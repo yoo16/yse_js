@@ -9,13 +9,13 @@
   <link rel="stylesheet" href="../css/prism.css">
   <link rel="stylesheet" href="../css/default.css">
 
-  <title>WA32 samples</title>
+  <title>Document 1</title>
 </head>
 
 <body>
   <div id="content" class="container">
     <div><a href="../index.html">Back</a></div>
-    <h1 class="h1">Document</h1>
+    <h1 class="h1">Document 1</h1>
 
     <h2 class="h2">DOM, Node, Element</h2>
     <div id="dom">
@@ -53,7 +53,6 @@
       </p>
     </div>
 
-
     <div id="query_selector">
       <h2 class="h2"><label for="" class="badge badge-danger">Point</label> document.querySelector()</h2>
       <p class="alert alert-info">
@@ -90,7 +89,7 @@
       <input type="text" name="test1">
       <input type="text" name="test2">
       <input type="text" name="test3">
-    </script>
+      </script>
 
       <h3 class="h3">JS</h3>
       <pre class="language-javascript"><code>
@@ -188,9 +187,7 @@
       </code></pre>
     </div>
 
-
-
-    <div>
+    <div id="lesson">
       <h2 class="h2">練習</h2>
       <p class="alert alert-info">
         以下のHTMLから document 要素(Element)を console.log() で 確認してみる
@@ -218,23 +215,8 @@
         </li>
       </ul>
       </script>
-    </div>
 
-    <div>
-      <h2 class="h2">練習</h2>
-      <pre class="language-javascript"><code>
-      title.innerHTML = 'City';
-  
-      let city_list = document.getElementById('city_list');
-      let li = document.createElement('li');
-      li.append('Nagoya');
-      city_list.appendChild(li);
-      console.log(city_list);
-      </code></pre>
-    </div>
-
-    <div>
-      <h2 id="title"></h2>
+      <h2 id="title"><span>Title</span></h2>
       <ul id="city_list">
         <li>
           <div class="city_name">Tokyo</div>
@@ -255,7 +237,6 @@
           <input type="text" name="lng" value="139.638031">
         </li>
       </ul>
-
     </div>
 
     <div><a href="../index.html">Back</a></div>

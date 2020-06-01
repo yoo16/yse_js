@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/prism.css">
+  <link rel="stylesheet" href="../css/default.css">
+
+  <title>Document 2</title>
+</head>
+
+<body>
+  <div id="content" class="container">
+    <div><a href="../index.html">Back</a></div>
+    <h1 class="h1">Document 2</h1>
+
+
+    <div id="create_element">
+      <h2 class="h2"><label for="" class="badge badge-danger">Point</label> createElement() メソッド</h2>
+      <p class="alert alert-info">
+        Element を作成
+      </p>
+      <pre class="language-javascript"><code>
+      document.Element('Tag')
+      </code></pre>
+
+      <h3 class="h3">JS</h3>
+      <pre class="language-javascript"><code>
+      let element_div = document.createElement('div');
+      </code></pre>
+    </div>
+
+
+    <div id="inner_text">
+      <h2 class="h2">innerText プロパティ</h2>
+      <p class="alert alert-info">
+        指定した Element の Text を取得・設定
+      </p>
+
+      <h3 class="h3">取得</h3>
+      <pre class="language-javascript"><code>
+      let text = Element.innerText
+      </code></pre>
+
+      <h3 class="h3">設定</h3>
+      <pre class="language-javascript"><code>
+      Element.innerText = 'String';
+      </code></pre>
+
+      <h2 id="text_title">Title</h2>
+
+      <h4 class="h4">HTML</h4>
+      <script type="text/plain" class="language-markup">
+      <h2 id="text_title">Title</h2>
+      </script>
+
+      <h4 class="h4">JS</h4>
+      <pre class="language-javascript"><code>
+      let title_text = document.getElementById('title_text');
+      console.log(title_text);
+      title_text.innerText = 'Hello JavaScript!!';
+      </code></pre>
+    </div>
+
+    <div id="inner_html">
+      <h2 class="h2"><label for="" class="badge badge-danger">Point</label> innerHTML プロパティ</h2>
+      <p class="alert alert-info">
+        指定した Element の HTML を取得・設定
+      </p>
+      <pre class="language-javascript"><code>
+      Element.innerHTML
+      </code></pre>
+
+      <h2 id="html_title">Title</h2>
+
+      <h3 class="h3">HTML</h3>
+      <script type="text/plain" class="language-markup">
+      <h2 id="html_title">Title</h2>
+      </script>
+
+      <h3 class="h3">JS</h3>
+      <p class="alert alert-info">
+        id=title のHTMLを取得
+      </p>
+      <pre class="language-javascript"><code>
+      let html_title = document.getElementById('html_title');
+      html_title.innerHTML = '<p>HTML Title</p>'
+      console.log(html_title);
+      </code></pre>
+    </div>
+
+
+    <div id="html_style">
+      <h2 class="h2"><label for="" class="badge badge-danger">Point</label> style プロパティ</h2>
+      <p class="alert alert-info">
+        style の取得・設定
+      </p>
+      <h3 class="h3">取得</h3>
+      <pre class="language-javascript"><code>
+      let style = Element.style
+      </code></pre>
+
+      <h3 class="h3">設定</h3>
+      <pre class="language-javascript"><code>
+      Element.style.プロパティ = 'String'
+      </code></pre>
+
+      <div id="price">100</div>
+
+      <h3 class="h3">HTML</h3>
+      <script type="text/plain" class="language-markup">
+      <div id="price">100</div>
+      </script>
+
+      <h3 class="h3">JS</h3>
+      <pre class="language-javascript"><code>
+      let style_element = document.querySelector('div#price');
+      style_element.style.color = '#ff0000';
+      style_element.style.border = '1px solid #ff0000';
+      style_element.style.padding = '10px';
+      </code></pre>
+
+      <h4 class="h4">cssText プロパティ</h4>
+      <pre class="language-javascript"><code>
+      style_element.style.cssText = "background-color: yellow; font-size: 20px;";
+      </code></pre>
+    </div>
+
+
+    <div id="append_child">
+      <h2 class="h2"><label for="" class="badge badge-danger">Point</label> appendChild() メソッド</h2>
+      <p class="alert alert-info">
+        指定した親要素に Element を追加
+      </p>
+      <pre class="language-javascript"><code>
+      親要素.appendChild();
+      </code></pre>
+
+
+      <div id="parent_div">Parent</div>
+      <p class="alert alert-info">
+        id=parent_div に p を追加
+      </p>
+      <h3 class="h3">HTML</h3>
+      <script type="text/plain" class="language-markup">
+      <div id="parent_div">Parent</div>
+      </script>
+
+      <h3 class="h3">JS</h3>
+      <pre class="language-javascript"><code>
+      let comment_p = document.createElement('p');
+      comment_p.innerHTML = 'Child Comment';
+      document.getElementById('parent_div').appendChild(comment_p);
+      </code></pre>
+    </div>
+
+
+    <div id="lesson">
+      <h2 class="h2">練習</h2>
+      <pre class="language-javascript"><code>
+      title.innerHTML = 'City';
+  
+      let city_list = document.getElementById('city_list');
+      let li = document.createElement('li');
+      li.append('Nagoya');
+      city_list.appendChild(li);
+      console.log(city_list);
+      </code></pre>
+
+      <div>
+        <h2 id="title"><span>Title</span></h2>
+        <ul id="city_list">
+          <li>
+            <div class="city_name">Tokyo</div>
+            <input type="text" name="number" value="1">
+            <input type="text" name="lat" value="35.652832">
+            <input type="text" name="lng" value="139.839478">
+          </li>
+          <li>
+            <div class="city_name">Osaka</div>
+            <input type="text" name="number" value="2">
+            <input type="text" name="lat" value="34.669529">
+            <input type="text" name="lng" value="135.497009">
+          </li>
+          <li>
+            <div class="city_name">Yokohama</div>
+            <input type="text" name="number" value="3">
+            <input type="text" name="lat" value="35.443707">
+            <input type="text" name="lng" value="139.638031">
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div><a href="../index.html">Back</a></div>
+  </div>
+
+  <script src="js/main.js"></script>
+
+  <script src="../js/prism.js"></script>
+</body>
+
+</html>
