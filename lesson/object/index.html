@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/prism.css">
+  <link rel="stylesheet" href="../css/default.css">
+
+  <title>配列</title>
+</head>
+
+<body>
+  <div id="content" class="container">
+    <div><a href="../index.html">Back</a></div>
+    <h1 class="h1">オブジェクト</span>(Object)</a></h1>
+    <div>
+      <h2 class="h2">オブジェクト(Object)とは？</h2>
+      <ul class="list-group">
+        <li class="list-group-item">プロパティ（属性）を複数集めたもの集合</li>
+        <li class="list-group-item">プロパティ（属性）は値にキーをつけたもの</li>
+        <li class="list-group-item">キー(key）と値(value)で作られる</li>
+      </ul>
+
+      <h2 class="h2">オブジェクトの例</h2>
+      <pre class="language-javascript"><code>
+      let user = { id: 10, name: 'User1', mail: 'user1@aaa.com', tel: '03-1111-2222' }
+      </code></pre>
+
+      <p class="alert alert-info">
+        改行して書くこともできる
+      </p>
+      <pre class="language-javascript"><code>
+      const traffic_light = {
+          blue: 'Go',
+          yellow: 'Slow down',
+          red: 'Stop'
+      }
+      </code></pre>
+
+      <div class="m-4 text-center">
+        <img src="images/object.png" alt="" width="500">
+      </div>
+
+    </div>
+
+
+    <div id="object_write">
+      <h2 class="h2">ルール</h2>
+      <ul class="list-group">
+        <li class="list-group-item">key と value は「:」で区切る</li>
+        <li class="list-group-item">複数の要素は「,」で区切る</li>
+        <li class="list-group-item">集合は、{} で囲む</li>
+      </ul>
+      <h3 class="h3">基本</h3>
+      <pre class="language-javascript"><code>
+      { key1: value1 }
+      </code></pre>
+
+      <h3 class="h3">複数の場合</h3>
+      <pre class="language-javascript"><code>
+      { 
+        key1: value1,
+        key2: value2,
+        ...
+      }
+      </code></pre>
+    </div>
+
+    <div id="arry_init">
+      <h2 class="h2">new Object() で初期化(Initialize)</h2>
+      <pre class="language-javascript"><code>
+        new Object()
+        </code></pre>
+
+      <h3 class="h3">JS</h3>
+      <pre class="language-javascript"><code>
+        let object1 = new Object();
+        </code></pre>
+    </div>
+
+    <div id="arry_init2">
+      <h2 class="h2">
+        <label for="" class="badge badge-danger">Point!</label>
+        {} で初期化(Initialize)
+      </h2>
+      <p class="alert alert-info">JavaScript では new Object() より利用される書き方</p>
+      <pre class="language-javascript"><code>
+      {} 
+      </code></pre>
+
+      <h3 class="h3">JS</h3>
+      <pre class="language-javascript"><code>
+      let object2 = {};
+      </code></pre>
+
+      <h3 class="h3">Debug（デバッグ）</h3>
+      <p class="alert alert-info">オブジェクトをDebug で確認してみる</p>
+      <pre class="language-javascript"><code>
+      console.log(object1);
+      console.log(object2);
+
+      //{}
+      //{}
+      </code></pre>
+
+    </div>
+
+    <div id="array_create">
+      <h2 class="h2">
+        <label for="" class="badge badge-danger">Point!</label>
+        オブジェクトデータの作成
+      </h2>
+      <p class="alert alert-info">
+        {} の中に、key: valueを「,」区切りで記述
+        <br>
+        値（value）が文字列の場合「''」「""」で囲む
+        <br>
+        キー（key）は「''」「""」で囲まなくてもよい
+      </p>
+      <pre class="language-javascript"><code>
+      { key1: 'value1', key2:'value2', key3:'value3'...}
+      </code></pre>
+      <p class="alert alert-info">数値やbool、変数などの場合「''」「""」で囲まない</p>
+      <pre class="language-javascript"><code>
+      { key1: 100, key2: -100, key3: 10.5, ...}
+      </code></pre>
+
+      <h3 class="h3">JS</h3>
+      <pre class="language-javascript"><code>
+      let city = {
+          code: 13,
+          name: 'Tokyo', 
+          lat: 35.652832,
+          lng: 139.839478,
+          is_active: true,
+      };
+      </code></pre>
+    </div>
+
+    <div id="array_get">
+      <h2 class="h2">
+        <label for="" class="badge badge-danger">Point!</label>
+        オブジェクトのアクセス
+      </h2>
+      <p class="alert alert-info">
+        キー(key)で「.」で区切ってアクセスする
+      </p>
+      <pre class="language-javascript"><code>
+      オブジェクト.key
+      </code></pre>
+      <h3 class="h3">JS</h3>
+      <pre class="language-javascript"><code>
+      let city = {
+          code: 13,
+          name: 'Tokyo', 
+          lat: 35.652832,
+          lng: 139.839478,
+          is_active: true,
+      };
+      let code = city.code;
+      let name = city.name;
+      let lat = city.lat;
+      let is_active = city.is_active;
+
+      //13
+      //Tokyo
+      //35.652832
+      //true
+      </code></pre>
+    </div>
+
+    <div id="create_object">
+      <h2 class="h2">
+        <label for="" class="badge badge-danger">Point!</label>
+        オブジェクトの設定
+      </h2>
+      <p class="alert alert-info">key を指定して、 value を設定する</p>
+      <pre class="language-javascript"><code>
+      オブジェクト.key = value
+      </code></pre>
+
+      <h3 class="h3">JS</h3>
+      <pre class="language-javascript"><code>
+      city.is_active = false;
+      city.kana = '東京';
+      </code></pre>
+    </div>
+
+    <div id="object_var_key">
+      <h2 class="h2">キー（key）を変数であつかう</h2>
+      <p class="alert alert-danger">
+        キー（key）を変数にする場合、「.」では直接代入できない
+        <br>
+        指定した名前で設定され、変数の参照はされない
+      </p>
+      <pre class="language-javascript"><code>
+      let vendor = {}
+      const key1 = 'Windows10';
+      const key2 = 'Mac';
+      const key3 = 'Android';
+      vendor.key1 = 'Microsoft';
+      vendor.key2 = 'Apple';
+      vendor.key3 = 'Google';
+
+      //{key1: "Microsoft", key2: "Apple", key3: "Google", iOS: "Apple", Windows95: "Microsoft"}
+      // key1, key2, key3 になってしまう
+      </code></pre>
+
+      <p class="alert alert-info">キー（key）を変数とする場合、[] で指定</p>
+      <pre class="language-javascript"><code>
+      vendor[key1] = 'Microsoft';
+      vendor[key2] = 'Apple';
+      vendor[key3] = 'Google';
+      </code></pre>
+
+      <p class="alert alert-info">文字列で指定することもできる</p>
+      <pre class="language-javascript"><code>
+      vendor['iOS'] = 'Apple';
+      vendor['Windows95'] = 'Microsoft';
+      </code></pre>
+    </div>
+
+    <div id="object_array">
+      <h2 class="h2">オブジェクト階層化</h2>
+      <p class="alert alert-info">
+        オブジェクトを階層的に作成
+        <br>
+        オブジェクトの初期化が必要
+      </p>
+      <pre class="language-javascript"><code>
+      let car = {}
+      car.owner = {}; //定義（初期化）しないとエラー
+      car.owner.name = 'User1';
+      car.owner.is_active = true; 
+      </code></pre>
+
+    </div>
+
+    <p><a href="../index.html">Back</a></p>
+  </div>
+
+  <script src="../js/jquery-3.5.0.min.js"></script>
+  <script src="js/main.js"></script>
+
+  <script src="../js/bootstrap/bootstrap.min.js"></script>
+  <script src="../js/prism.js"></script>
+  <script src="../js/ruby.js"></script>
+</body>
+
+</html>

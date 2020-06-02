@@ -56,138 +56,118 @@
       <h3 class="h3">Debug（デバッグ）</h3>
       <p class="alert alert-info">Array データをブラウザで Debug してみる</p>
       <pre class="language-javascript"><code>
-    console.log(flowers);
+      console.log(flowers);
 
-    //Result
-    0: "サクラ"
-    1: "チューリップ"
-    2: "ヒマワリ"
-    </code></pre>
+      //0: "サクラ"
+      //1: "チューリップ"
+      //2: "ヒマワリ"
+      </code></pre>
       <p class="alert alert-info">Indexと値を確認することができる</p>
+    </div>
 
-      <div id="init">
-        <h2 class="h2">new Array() で初期化(Initialize)</h2>
-        <pre class="language-javascript"><code>
+    <div id="arry_init">
+      <h2 class="h2">new Array() で初期化(Initialize)</h2>
+      <pre class="language-javascript"><code>
         new Array()
         </code></pre>
 
-        <h3 class="h3">JS</h3>
-        <pre class="language-javascript"><code>
+      <h3 class="h3">JS</h3>
+      <pre class="language-javascript"><code>
         let array1 = new Array();
         </code></pre>
+    </div>
 
-        <h3 class="h2">
-          <label for="" class="badge badge-danger">Point!</label>
-          [] で初期化(Initialize)
-          </h2>
-          <p class="alert alert-info">JavaScript では new Array() より利用される書き方</p>
-          <pre class="language-javascript"><code>
+    <div id="arry_init2">
+      <h2 class="h2">
+        <label for="" class="badge badge-danger">Point!</label>
+        [] で初期化(Initialize)
+      </h2>
+      <p class="alert alert-info">JavaScript では new Array() より利用される書き方</p>
+      <pre class="language-javascript"><code>
         []
         </code></pre>
 
-          <h3 class="h3">JS</h3>
-          <pre class="language-javascript"><code>
+      <h3 class="h3">JS</h3>
+      <pre class="language-javascript"><code>
         let array2 = [];
         </code></pre>
 
-          <h3 class="h3">Debug（デバッグ）</h3>
-          <p class="alert alert-info">配列をDebug で確認してみる</p>
-          <pre class="language-javascript"><code>
+      <h3 class="h3">Debug（デバッグ）</h3>
+      <p class="alert alert-info">配列をDebug で確認してみる</p>
+      <pre class="language-javascript"><code>
         console.log(array1);
         console.log(array2);
 
-        //Result
         //[]
         //[]
         </code></pre>
 
-      </div>
+    </div>
 
-      <div id="array_create">
-        <h2 class="h2">
-          <label for="" class="badge badge-danger">Point!</label>
-          Array データの作成
-        </h2>
-        <p class="alert alert-info">[]の中に、値を「,」区切りで記述</p>
-        <pre class="language-javascript"><code>
+    <div id="array_create">
+      <h2 class="h2">
+        <label for="" class="badge badge-danger">Point!</label>
+        Array データの作成
+      </h2>
+      <p class="alert alert-info">[]の中に、値を「,」区切りで記述</p>
+      <pre class="language-javascript"><code>
         ['value1', 'value2', ...]
         </code></pre>
-        <p class="alert alert-info">数値の場合は、'' や "" で囲まない</p>
-        <pre class="language-javascript"><code>
+      <p class="alert alert-info">数値の場合は、'' や "" で囲まない</p>
+      <pre class="language-javascript"><code>
         [100, -100, 10.5, ...]
         </code></pre>
 
-        <h3 class="h3">JS</h3>
-        <pre class="language-javascript"><code>
-        let cities = ['Tokyo', 'USA', 'China'];
+      <h3 class="h3">JS</h3>
+      <pre class="language-javascript"><code>
+        let cities = ['Tokyo', 'Osaka', 'Yokohama'];
         </code></pre>
-      </div>
+    </div>
 
-      <div id="array_get">
-        <h2 class="h2">
-          <label for="" class="badge badge-danger">Point!</label>
-          Array のアクセス
-        </h2>
-        <p class="alert alert-info">
-          インデックス(Index)でアクセスする
-        </p>
-        <pre class="language-javascript"><code>
+    <div id="array_get">
+      <h2 class="h2">
+        <label for="" class="badge badge-danger">Point!</label>
+        Array のアクセス
+      </h2>
+      <p class="alert alert-info">
+        インデックス(Index)でアクセスする
+      </p>
+      <pre class="language-javascript"><code>
         array[index]
         </code></pre>
-        <p class="alert alert-info">
-          インデックスは、0 からスタートすることに注意
-        </p>
-        <pre class="language-javascript"><code>
-        let cities = ['Tokyo', 'USA', 'China'];
+      <p class="alert alert-info">
+        インデックスは、0 からスタートすることに注意
+      </p>
+      <pre class="language-javascript"><code>
+        let cities = ['Tokyo', 'Osaka', 'Yokohama'];
         let city = cities[1];
 
-        //USA
+        //Osaka
         </code></pre>
-      </div>
+    </div>
 
-      <div id="array_object">
-        <h2 class="h2">
-          <label for="" class="badge badge-danger">Point!</label>
-          Array -オブジェクト
-        </h2>
-        <p class="alert alert-info">複数のオブジェクトを Array にしたもの</p>
-        <h3 class="h3">
-          <label for="" class="badge badge-danger">Point!</label>
-          オブジェクト
-        </h3>
-        <p class="alert alert-info">key: value で構成される</p>
-        <pre class="language-javascript"><code>
-        { 
-          key1: value1,
-          key2: value2,
-          ...
-        }
-        </code></pre>
-
-        <h4 class="h4">ユーザデータ</h4>
-        <pre class="language-javascript"><code>
-        { name: 'User1', email: 'user1@aaa.com', tel: '03-1111-2222' }
-        </code></pre>
-
-        <h3 class="h3">
-          <label for="" class="badge badge-danger">Point!</label>
-          Array - オブジェクト
-        </h3>
-        <pre class="language-javascript"><code>
+    <div id="array_object">
+      <h2 class="h2">
+        <label for="" class="badge badge-danger">Point!</label>
+        Array -オブジェクト
+      </h2>
+      <p class="alert alert-info">複数のオブジェクトを Array にしたもの</p>
+      <h3 class="h3">ユーザデータリスト</h3>
+      <pre class="language-javascript"><code>
         let users = [
-            { name: 'User1', email: 'user1@aaa.com', tel: '03-1111-2222' }
-            { name: 'User2', email: 'user2@aaa.com', tel: '090-1234-5678' }
-            { name: 'User3', email: 'user3@aaa.com', tel: '050-9999-1111' }
+            { id: 1, name: 'User1', email: 'user1@aaa.com', tel: '03-1111-2222' }
+            { id: 2, name: 'User2', email: 'user2@aaa.com', tel: '090-1234-5678' }
+            { id: 3, name: 'User3', email: 'user3@aaa.com', tel: '050-9999-1111' }
         ];
         </code></pre>
-      </div>
+    </div>
 
-      <div id="object_array">
-        <h2 class="h2">オブジェクト - Array</h2>
-        <p class="alert alert-info">複数のArray をオブジェクトにしたもの</p>
+    <div id="object_array">
+      <h2 class="h2">オブジェクト - Array</h2>
+      <p class="alert alert-info">複数のArray をオブジェクトにしたもの</p>
 
-        <h3 class="h3">ユーザごとのスコア</h3>
-        <pre class="language-javascript"><code>
+      <h3 class="h3">ユーザごとのスコア</h3>
+      <pre class="language-javascript"><code>
         let score = {
             user1: [90, 80, 74],
             user2: [76, 52, 68]
@@ -197,20 +177,20 @@
         //user2: (3) [76, 52, 68]
         </code></pre>
 
-        <h3 class="h3">オブジェクトのアクセス</h3>
-        <pre class="language-javascript"><code>
+      <h3 class="h3">オブジェクトのアクセス</h3>
+      <pre class="language-javascript"><code>
           score.user2;
 
           //[76, 52, 68]
           </code></pre>
-      </div>
+    </div>
 
-      <div id="array_array">
-        <h2 class="h2">Array - Array</h2>
-        <p class="alert alert-info">多次元配列</p>
+    <div id="array_array">
+      <h2 class="h2">Array - Array</h2>
+      <p class="alert alert-info">多次元配列</p>
 
-        <h3 class="h3">行列</h3>
-        <pre class="language-javascript"><code>
+      <h3 class="h3">行列</h3>
+      <pre class="language-javascript"><code>
         var matrix = [
             [1,2,3],
             [4,5,6],
@@ -222,169 +202,169 @@
         // 2: (3) [7, 8, 9]
         </code></pre>
 
-        <h3 class="h3">Arrayのアクセス</h3>
-        <pre class="language-javascript"><code>
+      <h3 class="h3">Arrayのアクセス</h3>
+      <pre class="language-javascript"><code>
         matrix[2];
 
         //[7, 8, 9]
         </code></pre>
-      </div>
+    </div>
 
-      <div id="length">
-        <h2 class="h2">
-          <label for="" class="badge badge-danger">Point!</label>
-          length プロパティ
-        </h2>
-        <p class="alert alert-info">Array の長さを取得するプロパティ</p>
-        <pre class="language-javascript"><code>
+    <div id="length">
+      <h2 class="h2">
+        <label for="" class="badge badge-danger">Point!</label>
+        length プロパティ
+      </h2>
+      <p class="alert alert-info">Array の長さを取得するプロパティ</p>
+      <pre class="language-javascript"><code>
         Array.length
         </code></pre>
 
-        <pre class="language-javascript"><code>
+      <pre class="language-javascript"><code>
         let length = cities.length;
         </code></pre>
 
-        <h3 class="h3">Debug</h3>
-        <pre class="language-javascript"><code>
+      <h3 class="h3">Debug</h3>
+      <pre class="language-javascript"><code>
         3
         </code></pre>
-      </div>
+    </div>
 
-      <div id="array_push">
-        <h2 class="h2">push() メソッド</h2>
-        <p class="alert alert-info">Array の最後に要素を追加</p>
-        <pre class="language-javascript"><code>
+    <div id="array_push">
+      <h2 class="h2">push() メソッド</h2>
+      <p class="alert alert-info">Array の最後に要素を追加</p>
+      <pre class="language-javascript"><code>
         Array.push('value')
         </code></pre>
 
-        <pre class="language-javascript"><code>
+      <pre class="language-javascript"><code>
         cities.push('Nagoya');
 
         //["Tokyo", "Osaka", "Yokohama", "Nagoya"]
         </code></pre>
-      </div>
+    </div>
 
-      <div id="array_pop">
-        <h2 class="h2">pop() メソッド</h2>
-        <p class="alert alert-info">Array の最後の要素を削除</p>
-        <pre class="language-javascript"><code>
+    <div id="array_pop">
+      <h2 class="h2">pop() メソッド</h2>
+      <p class="alert alert-info">Array の最後の要素を削除</p>
+      <pre class="language-javascript"><code>
         Array.pop()
         </code></pre>
 
-        <pre class="language-javascript"><code>
+      <pre class="language-javascript"><code>
         cities.pop();
 
         //["Tokyo", "Osaka", "Yokohama"]
         </code></pre>
-      </div>
+    </div>
 
-      <div id="array_pop">
-        <h2 class="h2">shift() メソッド</h2>
-        <p class="alert alert-info">Array の先頭の要素を削除</p>
-        <pre class="language-javascript"><code>
+    <div id="array_pop">
+      <h2 class="h2">shift() メソッド</h2>
+      <p class="alert alert-info">Array の先頭の要素を削除</p>
+      <pre class="language-javascript"><code>
         Array.shift()
         </code></pre>
 
-        <pre class="language-javascript"><code>
+      <pre class="language-javascript"><code>
         cities.shift();
 
         //["Osaka", "Yokohama"]
         </code></pre>
-      </div>
+    </div>
 
-      <div id="array_unshift">
-        <h2 class="h2">unshift() メソッド</h2>
-        <p class="alert alert-info">Array の先頭の要素を追加</p>
-        <pre class="language-javascript"><code>
+    <div id="array_unshift">
+      <h2 class="h2">unshift() メソッド</h2>
+      <p class="alert alert-info">Array の先頭の要素を追加</p>
+      <pre class="language-javascript"><code>
         Array.unshift('value')
         </code></pre>
 
-        <pre class="language-javascript"><code>
+      <pre class="language-javascript"><code>
         cities.unshift('Tokyo');
 
         //["Tokyo", "Osaka", "Yokohama"]
         </code></pre>
-      </div>
+    </div>
 
-      <div id="array_indexof">
-        <h2 class="h2">indexOf() メソッド</h2>
-        <p class="alert alert-info">Array のインデックス(Index)を取得</p>
-        <pre class="language-javascript"><code>
+    <div id="array_indexof">
+      <h2 class="h2">indexOf() メソッド</h2>
+      <p class="alert alert-info">Array のインデックス(Index)を取得</p>
+      <pre class="language-javascript"><code>
         Array.indexOf('value')
         </code></pre>
 
-        <pre class="language-javascript"><code>
+      <pre class="language-javascript"><code>
         let index = cities.indexOf('Tokyo');
 
         //0
         </code></pre>
-      </div>
+    </div>
 
-      <div id="array_splice">
-        <h2 class="h2">splice() メソッド</h2>
-        <p class="alert alert-info">indexから、n番目を削除</p>
-        <pre class="language-javascript"><code>
+    <div id="array_splice">
+      <h2 class="h2">splice() メソッド</h2>
+      <p class="alert alert-info">indexから、n番目を削除</p>
+      <pre class="language-javascript"><code>
         Array.splice(index, n)
         </code></pre>
 
-        <h3 class="h3">index = 1 から 1つ削除</h3>
-        <pre class="language-javascript"><code>
+      <h3 class="h3">index = 1 から 1つ削除</h3>
+      <pre class="language-javascript"><code>
         cities.splice(1, 1);
 
         // ["Tokyo", "Yokohama"]
         // Osaka が削除
         </code></pre>
 
-        <p class="alert alert-info">indexから、n番目に追加</p>
-        <pre class="language-javascript"><code>
+      <p class="alert alert-info">indexから、n番目に追加</p>
+      <pre class="language-javascript"><code>
         Array.splice(index, n, 'value')
         </code></pre>
 
-        <h3 class="h3">index = 1 から 1つ追加</h3>
-        <pre class="language-javascript"><code>
+      <h3 class="h3">index = 1 から 1つ追加</h3>
+      <pre class="language-javascript"><code>
         cities.splice(1, 0, "Osaka");
 
         // ["Tokyo", "Osaka", "Yokohama"]
         </code></pre>
-      </div>
+    </div>
 
-      <div id="array_foreach">
-        <h2 class="h2">
-          <label for="" class="badge badge-danger">Point!</label>
-          forEach
-        </h2>
-        <p class="alert alert-info">
-          Array をループさせる
-          <br>
-          for でループさせてもよいが、forEach の方が効率的
-        </p>
-        <pre class="language-javascript"><code>
+    <div id="array_foreach">
+      <h2 class="h2">
+        <label for="" class="badge badge-danger">Point!</label>
+        forEach
+      </h2>
+      <p class="alert alert-info">
+        Array をループさせる
+        <br>
+        for でループさせてもよいが、forEach の方が効率的
+      </p>
+      <pre class="language-javascript"><code>
         Array.forEach(function(value) {
         });
         </code></pre>
-        <p class="alert alert-info">
-          以下の引数も任意で利用できる
-          <br>
-          第2引数: インデックス
-          <br>
-          第3引数: 配列
-        </p>
-        <pre class="language-javascript"><code>
+      <p class="alert alert-info">
+        以下の引数も任意で利用できる
+        <br>
+        第2引数: インデックス
+        <br>
+        第3引数: 配列
+      </p>
+      <pre class="language-javascript"><code>
         Array.forEach(function(value, index, array) {
             //run
         });
         </code></pre>
 
-        <h3 class="h3">JS</h3>
-        <pre class="language-javascript"><code>
+      <h3 class="h3">JS</h3>
+      <pre class="language-javascript"><code>
         cities.forEach(function(city, index) {
             console.log(city);
             console.log(index);
         });
         </code></pre>
 
-        <h3 class="h3">Debug</h3>
-        <pre class="language-javascript"><code>
+      <h3 class="h3">Debug</h3>
+      <pre class="language-javascript"><code>
         Tokyo
         0
         Osaka
@@ -393,8 +373,8 @@
         2
         </code></pre>
 
-        <h3 class="h3">オブジェクト配列をループ</h3>
-        <pre class="language-javascript"><code>
+      <h3 class="h3">オブジェクト配列をループ</h3>
+      <pre class="language-javascript"><code>
         let prefectures = [
             { code: "1", label: "北海道" },
             { code: "2", label: "青森県" },
@@ -408,29 +388,29 @@
             console.log(index);
         });
         </code></pre>
-      </div>
+    </div>
 
-      <div id="array_map">
-        <h2 class="h2">
-          <label for="" class="badge badge-danger">Point!</label>
-          map
-        </h2>
-        <pre class="language-javascript"><code>
+    <div id="array_map">
+      <h2 class="h2">
+        <label for="" class="badge badge-danger">Point!</label>
+        map
+      </h2>
+      <pre class="language-javascript"><code>
         let array2 = array.map(element => function);
         // or
         let array2 = array.map(function(element) {});
         </code></pre>
 
-        <h3 class="h3">Array を計算1</h3>
-        <pre class="language-javascript"><code>
+      <h3 class="h3">Array を計算1</h3>
+      <pre class="language-javascript"><code>
         let numbers = [15, 20, 30, 5];
         let map_result1 = numbers.map(number => number * 2);
 
         // [30, 40, 60, 10]
         </code></pre>
 
-        <h3 class="h3">Array を内部関数で計算</h3>
-        <pre class="language-javascript"><code>
+      <h3 class="h3">Array を内部関数で計算</h3>
+      <pre class="language-javascript"><code>
         let map_result2 = numbers.map(function(number) {
             return number * 2
         });
@@ -438,8 +418,8 @@
         // [30, 40, 60, 10]
         </code></pre>
 
-        <h3 class="h3">Array を外部関数で計算</h3>
-        <pre class="language-javascript"><code>
+      <h3 class="h3">Array を外部関数で計算</h3>
+      <pre class="language-javascript"><code>
         let map_result3 = numbers.map(calculateMap);
 
         function calculateMap(number) {
@@ -448,13 +428,13 @@
 
         // [30, 40, 60, 10]
         </code></pre>
-      </div>
+    </div>
 
-      <div>
-        <h2 class="h2">途中で処理をとめたいとき</h2>
-        <p class="alert alert-info">forEach は、break, return を利用できないため、途中で処理をとめたいときは、some, for を利用</p>
-        <h3 class="h3">some</h3>
-        <pre class="language-javascript"><code>
+    <div>
+      <h2 class="h2">途中で処理をとめたいとき</h2>
+      <p class="alert alert-info">forEach は、break, return を利用できないため、途中で処理をとめたいときは、some, for を利用</p>
+      <h3 class="h3">some</h3>
+      <pre class="language-javascript"><code>
         prefectures.some(function(prefecture, index) {
           if (prefecture.code == '13') {
               console.log(prefecture.code);
@@ -465,8 +445,8 @@
         })
         </code></pre>
 
-        <h3 class="h3">for</h3>
-        <pre class="language-javascript"><code>
+      <h3 class="h3">for</h3>
+      <pre class="language-javascript"><code>
         for (let i=0; i < cities.length; i++) {
             let city = cities[i];
             if (city == 'Osaka') {
@@ -477,67 +457,67 @@
         }
         </code></pre>
 
-      </div>
+    </div>
 
-      <div id="array_concat">
-        <h2 class="h2">concat() メソッド</h2>
-        <p class="alert alert-info">Array を結合</p>
-        <pre class="language-javascript"><code>
+    <div id="array_concat">
+      <h2 class="h2">concat() メソッド</h2>
+      <p class="alert alert-info">Array を結合</p>
+      <pre class="language-javascript"><code>
         let array3 = array1.concat(array3)
         </code></pre>
 
 
-        <h3 class="h3">numbers1 と numbers2 を結合</h3>
-        <pre class="language-javascript"><code>
+      <h3 class="h3">numbers1 と numbers2 を結合</h3>
+      <pre class="language-javascript"><code>
         let numbers1 = [1, 2, 3, 4, 5];
         let numbers2 = [6, 7];
         let numbers3 = numbers1.concat(numbers2);
 
         // numbers3 => [1, 2, 3, 4, 5, 6, 7]
         </code></pre>
-      </div>
+    </div>
 
 
-      <div id="array_concat">
-        <h2 class="h2">find() メソッド</h2>
-        <p class="alert alert-info">Array を検索した最初の要素(Element）を返す</p>
-        <pre class="language-javascript"><code>
+    <div id="array_concat">
+      <h2 class="h2">find() メソッド</h2>
+      <p class="alert alert-info">Array を検索した最初の要素(Element）を返す</p>
+      <pre class="language-javascript"><code>
         let value = array.find(オブジェクト => 条件)
         </code></pre>
 
-        <h3 class="h3">都道府県コード13 を検索</h3>
-        <pre class="language-javascript"><code>
+      <h3 class="h3">都道府県コード13 を検索</h3>
+      <pre class="language-javascript"><code>
         let prefecture_value = prefectures.find(prefecture => prefecture.code == '13');
 
         //{code: "13", label: "東京都"}
         </code></pre>
-      </div>
+    </div>
 
 
-      <div id="array_concat">
-        <h2 class="h2">findIndex() メソッド</h2>
-        <p class="alert alert-info">Array を検索した最初のインデックス(Index）を返す</p>
-        <pre class="language-javascript"><code>
+    <div id="array_concat">
+      <h2 class="h2">findIndex() メソッド</h2>
+      <p class="alert alert-info">Array を検索した最初のインデックス(Index）を返す</p>
+      <pre class="language-javascript"><code>
         let index = array.find(オブジェクト => 条件)
         </code></pre>
 
-        <h3 class="h3">都道府県コード13 を検索</h3>
-        <pre class="language-javascript"><code>
+      <h3 class="h3">都道府県コード13 を検索</h3>
+      <pre class="language-javascript"><code>
         let prefecture_index = prefectures.findIndex(prefecture => prefecture.code == '13')
 
         //12
         </code></pre>
-      </div>
-
-      <div><a href="../index.html">Back</a></div>
     </div>
 
-    <script src="../js/jquery-3.5.0.min.js"></script>
-    <script src="js/main.js"></script>
+    <p><a href="../index.html">Back</a></p>
+  </div>
 
-    <script src="../js/bootstrap/bootstrap.min.js"></script>
-    <script src="../js/prism.js"></script>
-    <script src="../js/ruby.js"></script>
+  <script src="../js/jquery-3.5.0.min.js"></script>
+  <script src="js/main.js"></script>
+
+  <script src="../js/bootstrap/bootstrap.min.js"></script>
+  <script src="../js/prism.js"></script>
+  <script src="../js/ruby.js"></script>
 </body>
 
 </html>

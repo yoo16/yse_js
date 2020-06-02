@@ -9,14 +9,13 @@
   <link rel="stylesheet" href="../css/prism.css">
   <link rel="stylesheet" href="../css/default.css">
 
-  <title>Document 2</title>
+  <title>DOM 2</title>
 </head>
 
 <body>
   <div id="content" class="container">
-    <div><a href="../index.html">Back</a></div>
-    <h1 class="h1">Document 2</h1>
-
+    <p><a href="../index.html">Back</a></p>
+    <h1 class="h1">DOM 2</h1>
 
     <div id="create_element">
       <h2 class="h2"><label for="" class="badge badge-danger">Point</label> createElement() メソッド</h2>
@@ -194,113 +193,7 @@
       </code></pre>
     </div>
 
-
-    <div id="lesson">
-      <h2 class="h2">課題</h2>
-
-      <h3 class="h3">HTML</h3>
-      <script type="text/plain" class="language-markup">
-        <div>
-          <h2 id="title"><span>Title</span></h2>
-          <label for="">Select Number</label>
-          <input type="text" id="select_number" value="3">
-          <ul>
-            <li id="result_city_name"></li>
-            <li id="result_lat_lng"></li>
-          </ul>
-          <ul id="city_list">
-            <li>
-              <div class="number">1</div>
-              <div class="city_name">Tokyo</div>
-              <label for="">lat:</label>
-              <input type="text" name="lat" value="35.652832">
-              <label for="">lng:</label>
-              <input type="text" name="lng" value="139.839478">
-            </li>
-            <li>
-              <div class="number">2</div>
-              <div class="city_name">Osaka</div>
-              <label for="">lat:</label>
-              <input type="text" name="lat" value="34.669529">
-              <label for="">lng:</label>
-              <input type="text" name="lng" value="135.497009">
-            </li>
-            <li>
-              <div class="number">3</div>
-              <div class="city_name">Yokohama</div>
-              <label for="">lat:</label>
-              <input type="text" name="lat" value="35.443707">
-              <label for="">lng:</label>
-              <input type="text" name="lng" value="139.638031">
-            </li>
-          </ul>
-        </div>
-      </script>
-
-      <div>
-        <ul class="list-group">
-          <li class="list-group-item">index.htmlファイルの body内に上記の HTMLタグを記述</li>
-          <li class="list-group-item">js/main.js を作成</li>
-          <li class="list-group-item">id=title 要素のテキストを「City」に変更</li>
-          <li class="list-group-item">id=title 要素の色を「青色」に変更</li>
-          <li class="list-group-item">class=city_name 要素を console.log() で全て表示</li>
-          <li class="list-group-item">
-            id=select_number の value と、class=number のテキスト値が一致した同じ階層の
-            city_name 要素のテキストを id=result_city_name に表示する
-          </li>
-          <li class="list-group-item">
-            同様に id=select_number から lat, lng を取得し、 id=result_lat_lng に表示
-            <br>
-            例）(lat, lng) = (35.443707, 139.638031)
-          </li>
-        </ul>
-      </div>
-
-      <div>
-        <h2 id="title"><span>Title</span></h2>
-        <label for="">index</label>
-        <input type="text" id="select_number" value="3">
-        <ul>
-          <li id="result_city_name"></li>
-          <li id="result_lat_lng"></li>
-        </ul>
-        <ul id="city_list">
-          <li>
-            <div class="number">1</div>
-            <div class="city_name">Tokyo</div>
-            <div class="lat_lng">
-              <label for="">lat:</label>
-              <input type="text" name="lat" value="35.652832">
-              <label for="">lng:</label>
-              <input type="text" name="lng" value="139.839478">
-            </div>
-          </li>
-          <li>
-            <div class="number">2</div>
-            <div class="city_name">Osaka</div>
-            <div class="lat_lng">
-              <label for="">lat:</label>
-              <input type="text" name="lat" value="34.669529">
-              <label for="">lng:</label>
-              <input type="text" name="lng" value="135.497009">
-            </div>
-          </li>
-          <li>
-            <div class="number">3</div>
-            <div class="city_name">Yokohama</div>
-            <div class="lat_lng">
-            <label for="">lat:</label>
-            <input type="text" name="lat" value="35.443707">
-            <label for="">lng:</label>
-            <input type="text" name="lng" value="139.638031">
-            </div>
-          </li>
-        </ul>
-      </div>
-
-    </div>
-
-    <div><a href="../index.html">Back</a></div>
+    <p><a href="../index.html">Back</a></p>
   </div>
 
   <script src="js/main.js"></script>
