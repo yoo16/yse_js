@@ -16,53 +16,53 @@
 <body>
   <div id="content" class="container">
     <div><a href="../index.html">Back</a></div>
-    <h1 class="h1">課題: Array</h1>
+    <h1 class="h1">課題: JavaScript の Object & Array</h1>
 
     <div id="lesson">
-      <h3 class="h3">1) city オブジェクトの lng を console.log() で表示</h3>
+      <h3 class="h3">1) 以下のファイル構成を作成して、HTMLからJavaScriptを読み込めるようにする</h3>
+      <pre class="language-bash"><code>
+        index.html
+        js/main.js
+      </code></pre>
+      <p class="alert alert-info">
+        「/」はディレクトリを示す
+      </p>
+
+      <div class="mt-5">
+        <p class="alert alert-danger">
+          以降の問題は、main.js に記述すること
+        </p>
+      </div>
+      <h3 class="h3">2) 以下の city オブジェクトの is_active を console.log() で表示</h3>
       <pre class="language-javascript"><code>
       let city = {
           code: 13,
           name: 'Tokyo',
-          lat: 35.652832,
-          lng: 139.839478,
           is_active: true,
       };
       </code></pre>
 
-      <h3 class="h3">2) オブジェクトを作成して console.log() で表示</h3>
+      <h3 class="h3">3) 「2」の city オブジェクトに、キー「kana」、値「とうきょう」を追加し、console.log() で表示</h3>
+
+      <h3 class="h3">4) 以下の表から、オブジェクトを作成して console.log() で表示</h3>
       <table class="table table-responsive">
         <tr>
           <th>name</th>
-          <th>kana</th>
           <th>price</th>
           <th>amount</th>
         </tr>
         <tr>
           <td>Apple</td>
-          <td>りんご</td>
           <td>120</td>
           <td>4</td>
         </tr>
       </table>
 
-      <ul class="list-group">
-        <li class="list-group-item">price: 値段</li>
-        <li class="list-group-item">amount: 個数</li>
-      </ul>
+      <h3 class="h3">5) 「Tokyo」「Osaka」「Nagoya」の Array 作成して、console.log() で表示</h3>
 
-      <h3 class="h3">3) 「2」のオブジェクトを利用して合計金額を console.log() で表示</h3>
+      <h3 class="h3">6) 「5」の Array から「Nagoya」を削除し「Yokohama」を追加して、console.log() で表示</h3>
 
-      <h3 class="h3">4) 以下の表をオブジェクト配列にして、console.log() で表示する</h3>
-      <ul class="list-group">
-        <li class="list-group-item">height: 身長(cm)</li>
-        <li class="list-group-item">weight: 体重(kg)</li>
-      </ul>
-      <p class="alert alert-info">
-        1行目の id, name, height, weight はオブジェクトのキー
-        <br>
-        2行目以降の各項目は、オブジェクトの値
-      </p>
+      <h3 class="h3">7) 以下の表をオブジェクト配列にして、console.log() で表示</h3>
       <table class="table table-responsive">
         <tr>
           <th>id</th>
@@ -102,7 +102,7 @@
         </tr>
       </table>
 
-      <h3 class="h3">5) 「4」データに、以下のFさんのデータを追加する</h3>
+      <h3 class="h3">8) 「7」データに、以下のFさんのデータを追加する</h3>
       <table class="table table-responsive">
         <tr>
           <th>id</th>
@@ -118,14 +118,14 @@
         </tr>
       </table>
 
-      <h3 class="h3">6) 「5」データで身長(height)が 170 以上のデータを、新たに配列にして console.log() で表示する</h3>
+      <h3 class="h3">9) 「8」データで height が 170 以上のデータを、新たに配列にして console.log() で表示</h3>
 
-      <h3 class="h3">7) 「5」データでBMIの最大値と最小値を console.log() で表示する</h3>
+      <h3 class="h3">10) 「8」データでBMIの最大値と最小値を console.log() で表示</h3>
       <p class="alert alert-info">
-      BMI ＝ 体重(kg) / 身長(m)の2乗
+        BMI ＝ 体重(kg) / 身長(m)の2乗
       </p>
       <p class="alert alert-danger">
-        表の height（身長）の単位は cm なので計算時に注意
+        weight の単位は(kg)、 height の単位は(cm) なので計算時に注意
       </p>
     </div>
   </div>

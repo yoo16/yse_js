@@ -2,11 +2,16 @@
 let city = {
     code: 13,
     name: 'Tokyo',
-    lat: 35.652832,
-    lng: 139.839478,
     is_active: true,
 };
 console.log(city.lng);
+
+let data = {
+    name: 'Apple',
+    kana: 'りんご',
+    price: 120,
+    amount: 4
+}
 
 let users = [
     { id: 1, name: 'A', height: 164, weight: 62.8 },
