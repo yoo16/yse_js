@@ -4,14 +4,14 @@ let city = {
     name: 'Tokyo',
     is_active: true,
 };
-console.log(city.lng);
+console.log(city.is_active);
 
 let data = {
     name: 'Apple',
-    kana: 'りんご',
     price: 120,
     amount: 4
 }
+console.log(data);
 
 let users = [
     { id: 1, name: 'A', height: 164, weight: 62.8 },
@@ -25,11 +25,9 @@ console.log(users);
 users.push({ id: 6, name: 'F', height: 165, weight: 55.1 });
 console.log(users);
 
-let users2 = [];
 users.forEach(function(user) {
-    if (user.height >= 170) users2.push(user);
+    if (user.height >= 170) console.log(user.name);
 });
-console.log(users2);
 
 //bmi
 let bmi_list = [];
