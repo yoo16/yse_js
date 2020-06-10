@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="css/default.css">
+
+  <link rel="stylesheet" href="css/prism.css">
+
+  <title>定期試験</title>
+</head>
+
+<body>
+  <div id="content" class="container">
+    <h1 class="h1">定期試験: JavaScript</h1>
+
+    <div id="lesson">
+      <h3 class="h3">1) HTML, CSS, JavaScript の違いについて説明してください。</h3>
+
+      <h3 class="h3">2) 以下のファイル構成を作成して、HTMLからJavaScriptを読み込めるようにしてください</h3>
+      <pre class="language-bash"><code>
+        index.html
+        js/main.js
+      </code></pre>
+
+      <p>
+        ここからの問題は、「2」で作成した main.js に記述してください。<br>
+        最後に提出用として「index.html」「main.js」をアップロードします。
+      </p>
+
+      <h3 class="h3">3) 以下の表から Object を作成し、console.log() で表示してください</h3>
+      <table class="table table-responsive">
+        <tr>
+          <th>name</th>
+          <th>price</th>
+          <th>amount</th>
+        </tr>
+        <tr>
+          <td>Orange</td>
+          <td>90</td>
+          <td>8</td>
+        </tr>
+      </table>
+
+      <h3 class="h3">4) 以下の表から「name」「code」の Object とした Array を作成し console.log() で表示してください</h3>
+      <table class="table table-responsive">
+        <tr>
+          <th>name</th>
+          <th>code</th>
+        </tr>
+        <tr>
+          <td>Chiba</td>
+          <td>12</td>
+        </tr>
+        <tr>
+          <td>Tokyo</td>
+          <td>13</td>
+        </tr>
+        <tr>
+          <td>Kanagawa</td>
+          <td>14</td>
+        </tr>
+      </table>
+
+      <h3 class="h3">Object - Array があります</h3>
+      <pre class="language-javascript"><code>
+      let users = [
+          { id: 1, name: 'A', height: 180, weight: 77.8 },
+          { id: 2, name: 'B', height: 149, weight: 48.2 },
+          { id: 3, name: 'C', height: 155, weight: 61.4 },
+          { id: 4, name: 'D', height: 177, weight: 74.2 },
+          { id: 5, name: 'E', height: 163, weight: 55.1 },
+      ]
+      </code></pre>
+
+      <h3 class="h3">5) データ users から height が 165 以上の name を、console.log() で表示してください</h3>
+
+      <h3 class="h3">6) データ users から、BMIの最大値と最小値を console.log() で表示</h3>
+      <p class="alert alert-info">
+        BMI ＝ 体重(kg) / 身長(m)の2乗
+      </p>
+      <p class="alert alert-danger">
+        weight の単位は(kg)、 height の単位は(cm) なので計算時に注意
+      </p>
+    </div>
+  </div>
+
+  <script src="js/jquery-3.5.0.min.js"></script>
+  <script src="js/bootstrap/bootstrap.min.js"></script>
+  <script src="js/array.js"></script>
+  <script src="js/prism.js"></script>
+</body>
+
+</html>

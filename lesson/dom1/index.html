@@ -72,7 +72,7 @@
 
       <h3 class="h3">JS</h3>
       <pre class="language-javascript"><code>
-     let input_list = document.querySelectorAll('input');
+     let input_list = document.querySelector('input');
       </code></pre>
     </div>
 
@@ -86,30 +86,60 @@
       </code></pre>
       <h3 class="h3">HTML</h3>
       <script type="text/plain" class="language-markup">
-      <input type="text" name="test1">
-      <input type="text" name="test2">
-      <input type="text" name="test3">
+      <div id="item_list">
+        <input type="text" name="item_name">
+        <input type="text" name="item_name">
+        <input type="text" name="item_name">
+      </div>
       </script>
 
-      <h3 class="h3">JS</h3>
+      <p class="alert alert-info">
+        全ての input を取得
+      </p>
       <pre class="language-javascript"><code>
       let input_list = document.querySelectorAll('input');
       </code></pre>
 
-      <h4 class="h4">id や親子要素のセレクタ</h4>
-      <h3 class="h3">JS</h3>
+      <h4 class="h4">memo</h4>
+      <p class="alert alert-danger">
+        querySelectorAll() の戻り値は、Array でなく NodeList 型であることに注意
+      </p>
+
+      <h3 class="h3">id や親子要素のセレクタ</h3>
+      <p class="alert alert-info">
+        querySelectorAll() はHTML内の全ての input が存在があると全て取得してしまうため、誤動作の原因となる。<br>
+        その場合、id や 親子要素のなど指定をすると良い。
+      </p>
       <pre class="language-javascript"><code>
-      let test_input = document.querySelector('div#test > input');
+      let test_input = document.querySelectorAll('#item_list > input');
+      </code></pre>
+    </div>
+
+    <div id="foreach_value">
+      <h2 class="h2">forEach と valueプロパティ</h2>
+      <p class="alert alert-info">
+        querySelectorAll() で取得した要素を、forEach でループする<br>
+        また、各 input の値を設定する場合、value プロパティを利用する
+      </p>
+      <pre class="language-javascript"><code>
+      let item_list_elements = document.querySelectorAll('#item_list > input');
+
+      item_list_elements.forEach(element => {
+          element.value = 10
+      })
+      //または
+      item_list_elements.forEach(function(element) {
+          element.value = 10
+      }
       </code></pre>
 
-      <div id="test">
-        <input type="text" name="test1">
-        <input type="text" name="test2">
-        <input type="text" name="test3">
+      <div id="item_list">
+        <input type="text" name="item_name">
+        <input type="text" name="item_name">
+        <input type="text" name="item_name">
       </div>
 
     </div>
-
 
     <div id="get_element_by_id">
       <h2 class="h2"><label for="" class="badge badge-danger">Point</label> document.getElementById()</h2>
@@ -140,13 +170,11 @@
     <div id="get_elements_by_class_name">
       <h2 class="h2"><label for="" class="badge badge-danger">Point</label> document.getElementsByClassName()</h2>
       <p class="alert alert-info">
-        指定したIDの Element オブジェクトを取得
-        <br>
-        id はHTML内でユニークであること
+        指定した class の Element オブジェクトを取得
       </p>
       <pre class="language-javascript"><code>
-        document.getElementsByClassName('Class Name');
-        </code></pre>
+      document.getElementsByClassName('Class Name');
+      </code></pre>
 
       <h3 class="h3">HTML</h3>
       <script type="text/plain" class="language-markup">
@@ -164,6 +192,24 @@
       <pre class="language-javascript"><code>
       let city_names = document.getElementsByClassName('city_name');
       </code></pre>
+
+      <h4 class="h4">memo</h4>
+      <p class="alert alert-danger">
+        querySelectorAll() の戻り値は、Array でなく HTMLCollection 型であることに注意<br>
+        （そのままでは、forEach できないなど）
+      </p>
+      <pre class="language-javascript"><code>
+      let city_names = document.getElementsByClassName('city_name');
+      Array.prototype.forEach.call(city_names, function(city_name) {
+          console.log(city_name.innerHTML)
+      })
+      //または
+      city_names = Array.from(city_names)
+      city_names.forEach(function(city_name) {
+          console.log(city_name.innerHTML)
+      })
+      </code></pre>
+
     </div>
 
     <div id="get_element_by_name">

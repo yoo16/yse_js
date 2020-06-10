@@ -20,10 +20,39 @@
     <div id="lesson">
       <h2 class="h2">課題：DOM</h2>
 
+      <p>
+        準備として以下のファイル構成を作成してください。<br>
+        以降の問題は、index.html と main.js にコーディングしてください。
+      </p>
+      <pre class="language-bash"><code>
+        index.html
+        js/main.js
+      </code></pre>
+
+      <h3 class="h3">1) 以下のHTMLに、user_number のタグ内に「学生番号」、user_name のタグ内に「氏名」を JS で表示してください</h3>
+      <script type="text/plain" class="language-markup">
+        <h2 id="user_number"></h2>
+        <h2 id="user_name"></h2>
+      </script>
+
+      <h3 class="h3">2) 以下のHTMLに、amount のタグ内に「10」、price のタグ内に「120」を JS で表示してください</h3>
+      <script type="text/plain" class="language-markup">
+        <ul>
+          <li class="amount"></li>
+          <li class="amount"></li>
+          <li class="amount"></li>
+        </ul>
+        <ul>
+          <li class="price"></li>
+          <li class="price"></li>
+          <li class="price"></li>
+        </ul>
+      </script>
+
+
       <h3 class="h3">HTML</h3>
       <script type="text/plain" class="language-markup">
         <div>
-          <h2 id="title"><span>Title</span></h2>
           <label for="">Select Number</label>
           <input type="text" id="select_number" value="3">
           <ul>
@@ -79,7 +108,6 @@
       </div>
 
       <div>
-        <h2 id="title"><span>Title</span></h2>
         <label for="">index</label>
         <input type="text" id="select_number" value="3">
         <ul>
@@ -125,6 +153,7 @@
     <div><a href="../index.html">Back</a></div>
   </div>
 
+  <script src="../js/dom.js"></script>
   <script src="../js/prism.js"></script>
 </body>
 
