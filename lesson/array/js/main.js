@@ -41,10 +41,10 @@ console.log(score.user2);
  * array - array
  */
 var matrix = [
-    [1,2,3],
-    [4,5,6],
-    [7,8,9]
-  ];
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+];
 console.log(matrix);
 console.log(matrix[2]);
 
@@ -106,12 +106,12 @@ console.log(cities);
 /** 
  * array iterator
  */
-cities.forEach(function(city, index, array) {
+cities.forEach(function (city, index, array) {
     console.log(city);
     console.log(index);
 });
 
-for (let i=0; i < cities.length; i++) {
+for (let i = 0; i < cities.length; i++) {
     let city = cities[i];
     if (city == 'Osaka') {
         console.log('break');
@@ -176,7 +176,7 @@ let prefectures = [
 /**
  * foreach
  */
-prefectures.forEach(function(prefecture, index) {
+prefectures.forEach(function (prefecture, index) {
     // console.log(prefecture.code);
     // console.log(prefecture.label);
     // console.log(index);
@@ -193,7 +193,7 @@ console.log(map_result1);
 /**
  * map() 2
  */
-let map_result2 = numbers.map(function(number) {
+let map_result2 = numbers.map(function (number) {
     return number * 2;
 });
 console.log(map_result2);
@@ -211,7 +211,7 @@ console.log(map_result3);
 /**
  * some
  */
-prefectures.some(function(prefecture, index) {
+prefectures.some(function (prefecture, index) {
     if (prefecture.code == '13') {
         console.log(prefecture.code);
         console.log(prefecture.label);

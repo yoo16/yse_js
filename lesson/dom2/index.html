@@ -18,112 +18,63 @@
     <h1 class="h1">DOM 2</h1>
 
     <div id="create_element">
-      <h2 class="h2"><label for="" class="badge badge-danger">Point</label> createElement() メソッド</h2>
-      <p class="alert alert-info">
+      <h2 class="h2">createElement() メソッド</h2>
+      <p class="">
         Element を作成
       </p>
       <pre class="language-javascript"><code>
-      document.createElement('Tag')
-      </code></pre>
-
-      <h3 class="h3">JS</h3>
-      <pre class="language-javascript"><code>
-      let element_div = document.createElement('div');
+      document.createElement('要素名')
       </code></pre>
     </div>
 
 
     <div id="inner_text">
       <h2 class="h2">innerText プロパティ</h2>
-      <p class="alert alert-info">
-        指定した Element の Text を取得・設定
+      <p class="">
+        指定した要素のテキストを取得・設定
       </p>
 
       <h3 class="h3">取得</h3>
       <pre class="language-javascript"><code>
-      let text = Element.innerText
+      要素.innerText
       </code></pre>
 
       <h3 class="h3">設定</h3>
       <pre class="language-javascript"><code>
-      Element.innerText = 'String';
-      </code></pre>
-
-      <h2 id="text_title">Title</h2>
-
-      <h4 class="h4">HTML</h4>
-      <script type="text/plain" class="language-markup">
-      <h2 id="text_title">Title</h2>
-      </script>
-
-      <h4 class="h4">JS</h4>
-      <pre class="language-javascript"><code>
-      let title_text = document.getElementById('title_text');
-      title_text.innerText = 'Hello JavaScript!!';
+      要素.innerText = '値'
       </code></pre>
     </div>
 
     <div id="inner_html">
-      <h2 class="h2"><label for="" class="badge badge-danger">Point</label> innerHTML プロパティ</h2>
-      <p class="alert alert-info">
-        指定した Element の HTML を取得・設定
+      <h2 class="h2">innerHTML プロパティ</h2>
+      <p class="">
+        指定した要素の HTML を取得・設定
       </p>
-      <pre class="language-javascript"><code>
-      Element.innerHTML
-      </code></pre>
 
-      <h2 id="html_title">Title</h2>
-
-      <h3 class="h3">HTML</h3>
-      <script type="text/plain" class="language-markup">
-      <h2 id="html_title">Title</h2>
-      </script>
-
-      <h3 class="h3">JS</h3>
-      <p class="alert alert-info">
-        id=title のHTMLを取得
-      </p>
-      <pre class="language-javascript"><code>
-      let html_title = document.getElementById('html_title');
-      html_title.innerHTML = '<p>HTML Title</p>'
-      console.log(html_title);
-      </code></pre>
-    </div>
-
-    <div id="value_property">
-      <h2 class="h2"><label for="" class="badge badge-danger">Point</label> value プロパティ</h2>
-      <p class="alert alert-info">
-        value プロパティの値を取得・設定
-      </p>
       <h3 class="h3">取得</h3>
       <pre class="language-javascript"><code>
-      let value = Element.value
+      要素.innerHTML
       </code></pre>
 
       <h3 class="h3">設定</h3>
       <pre class="language-javascript"><code>
-      Element.value = 'Value'
+      要素.innerHTML = '値'
       </code></pre>
+    </div>
 
-
-      <p class="alert alert-info">
-        id=amount の value を15に設定する
+    <div id="value_property">
+      <h2 class="h2">value プロパティ</h2>
+      <p class="">
+        value プロパティの値を取得・設定
       </p>
-      <input id="amount" type="text" value="">
-
-      <h3 class="h3">HTML</h3>
-      <script type="text/plain" class="language-markup">
-      <input type="amount" value="">
-      </script>
-
-      <h3 class="h3">JS</h3>
+      <h3 class="h3">取得</h3>
       <pre class="language-javascript"><code>
-      document.getElementById('amount').value = 15;
+      要素.value
       </code></pre>
 
-      <h4 class="h4">style.cssText プロパティ</h4>
+      <h3 class="h3">設定</h3>
       <pre class="language-javascript"><code>
-      style_element.style.cssText = "background-color: yellow; font-size: 20px;";
+      要素.value = '値'
       </code></pre>
     </div>
 
@@ -134,63 +85,85 @@
       </p>
       <h3 class="h3">取得</h3>
       <pre class="language-javascript"><code>
-      let style = Element.style
+      要素.style
       </code></pre>
 
       <h3 class="h3">設定</h3>
       <pre class="language-javascript"><code>
-      Element.style.プロパティ = 'String'
+      要素.style.プロパティ = '値'
       </code></pre>
 
-      <div id="price">100</div>
+      <h3 class="h3">cssText プロパティ</h3>
+      <p>cssText を利用すると、一括でCSSを設定できる</p>
+      <pre class="language-javascript"><code>
+      要素.style.cssText = 'CSSの設定'
+      </code></pre>
+    </div>
 
-      <h3 class="h3">HTML</h3>
+    <div id="append_child">
+      <h2 class="h2">appendChild() メソッド</h2>
+      <p class="alert alert-info">
+        指定した親要素に要素を追加
+      </p>
+      <pre class="language-javascript"><code>
+      親要素.appendChild(要素);
+      </code></pre>
+    </div>
+
+    <div>
+      <h2 class="h2">練習</h2>
       <script type="text/plain" class="language-markup">
+      <h2 id="text_title">Title</h2>
+      <h2 id="html_title">Title</h2>
+      <input type="text" id="amount">
       <div id="price">100</div>
       </script>
 
-      <h3 class="h3">JS</h3>
+      <h3 class="h3">createElement()</h3>
       <pre class="language-javascript"><code>
-      let style_element = document.getElementById('price');
-      //let style_element = document.querySelector('div#price');
+      let element_div = document.createElement('div');
+      console.log(element_div);
+      </code></pre>
+
+      <h3 class="h3">innerText</h3>
+      <pre class="language-javascript"><code>
+      let text_title = document.querySelector('#text_title');
+      //let text_title = document.getElementById('text_title');
+      text_title.innerText = '<p>Text Title!!</p>';
+      </code></pre>
+
+      <h3 class="h3">innerHTML</h3>
+      <pre class="language-javascript"><code>
+      let html_title = document.querySelector('#html_title');
+      //let html_title = document.getElementById('html_title');
+      html_title.innerHTML = '<p>HTML Title</p>';
+      </code></pre>
+
+      <h3 class="h3">innerText</h3>
+      <pre class="language-javascript"><code>
+      document.querySelector('#amount').value = 15;
+      //document.getElementById('amount').value = 15;
+      </code></pre>
+
+      <h3 class="h3">Style(CSS)</h3>
+      <pre class="language-javascript"><code>
+      //let style_element = document.getElementById('price');
+      let style_element = document.querySelector('#price');
       style_element.style.color = '#ff0000';
       style_element.style.border = '1px solid #ff0000';
       style_element.style.padding = '10px';
       </code></pre>
-
-      <h4 class="h4">style.cssText プロパティ</h4>
-      <pre class="language-javascript"><code>
-      style_element.style.cssText = "background-color: yellow; font-size: 20px;";
-      </code></pre>
     </div>
 
 
-    <div id="append_child">
-      <h2 class="h2"><label for="" class="badge badge-danger">Point</label> appendChild() メソッド</h2>
-      <p class="alert alert-info">
-        指定した親要素に Element を追加
-      </p>
-      <pre class="language-javascript"><code>
-      target.appendChild();
-      </code></pre>
+    <h3 class="h3">appendChild()</h3>
+    <pre class="language-javascript"><code>
+    let comment_p = document.createElement('p');
+    comment_p.innerHTML = 'こんにちわ';
+    comment_p.style.cssText = "background-color: yellow; padding: 10px;";
 
-      <div id="parent_div">Parent</div>
-      <p class="alert alert-info">
-        id=parent_div 要素に p タグを追加し、赤色にする
-      </p>
-      <h3 class="h3">HTML</h3>
-      <script type="text/plain" class="language-markup">
-      <div id="parent_div">Parent</div>
-      </script>
-
-      <h3 class="h3">JS</h3>
-      <pre class="language-javascript"><code>
-      let comment_p = document.createElement('p');
-      comment_p.innerHTML = 'Child Comment';
-      comment_p.style.color = '#ff0000';
-      document.getElementById('parent_div').appendChild(comment_p);
-      </code></pre>
-    </div>
+    document.getElementById('parent').appendChild(comment_p);
+    </code></pre>
 
     <p><a href="../index.html">Back</a></p>
   </div>

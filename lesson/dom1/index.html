@@ -43,61 +43,60 @@
         <li class="list-group-item">親である Node からプロパティを継承したもの</li>
         <li class="list-group-item">style、attribute、width、height etc...</li>
       </ul>
-      </p>
     </div>
 
     <div id="document">
-      <h2 class="h2"><label for="" class="badge badge-danger">Point</label> document オブジェクト</h2>
-      <p class="alert alert-info">
+      <h2 class="h2"> document オブジェクト</h2>
+      <p class="">
         documentオブジェクトで、WebページのHTML要素(Element）にプログラムでアクセスできる
       </p>
     </div>
 
     <div id="query_selector">
-      <h2 class="h2"><label for="" class="badge badge-danger">Point</label> document.querySelector()</h2>
-      <p class="alert alert-info">
+      <h2 class="h2"> document.querySelector()</h2>
+      <p class="">
         指定したセレクタの最初の Element を取得
       </p>
       <pre class="language-javascript"><code>
-      document.querySelector('Element');
-      </code></pre>
-      <h3 class="h3">HTML</h3>
-      <script type="text/plain" class="language-markup">
-      <div id="test">
-        <input type="text" name="test1">
-        <input type="text" name="test2">
-        <input type="text" name="test3">
-      </div>
-      </script>
-
-      <h3 class="h3">JS</h3>
-      <pre class="language-javascript"><code>
-     let input_list = document.querySelector('input');
+      document.querySelector('要素')
       </code></pre>
     </div>
 
     <div id="query_selector_all">
-      <h2 class="h2"><label for="" class="badge badge-danger">Point</label> document.querySelectorAll()</h2>
-      <p class="alert alert-info">
+      <h2 class="h2"> document.querySelectorAll()</h2>
+      <p class="">
         指定したセレクタの全ての Element を取得
       </p>
       <pre class="language-javascript"><code>
-        document.querySelectorAll('Element');
+        document.querySelectorAll('要素')
       </code></pre>
-      <h3 class="h3">HTML</h3>
-      <script type="text/plain" class="language-markup">
-      <div id="item_list">
-        <input type="text" name="item_name">
-        <input type="text" name="item_name">
-        <input type="text" name="item_name">
-      </div>
-      </script>
 
+      <h4 class="h4">memo</h4>
+      <p class="">
+        querySelectorAll() はHTML内の全ての input を全て取得してしまうため、誤動作の原因となる場合がある。<br>
+        親要素やプロパティなどを使ってセレクタをしてみる。
+      </p>
+
+      <h3 class="h3">id と 親子要素を指定する方法</h3>
+      <pre class="language-javascript"><code>
+      document.querySelectorAll('#親要素のID > 子要素')
+      </code></pre>
+
+      <h3 class="h3">プロパティを指定する方法</h3>
+      <pre class="language-javascript"><code>
+        document.querySelectorAll('要素[プロパティ名=プロパティ値]')
+      </code></pre>
+    </div>
+
+    <div id="foreach_value">
+      <h2 class="h2">forEach</h2>
       <p class="alert alert-info">
-        全ての input を取得
+        querySelectorAll() で取得した要素を、forEach でループする<br>
+        また、各 input の値を設定する場合、value プロパティを利用する
       </p>
       <pre class="language-javascript"><code>
-      let input_list = document.querySelectorAll('input');
+      要素の集合.forEach(function(要素) {
+      }
       </code></pre>
 
       <h4 class="h4">memo</h4>
@@ -105,184 +104,159 @@
         querySelectorAll() の戻り値は、Array でなく NodeList 型であることに注意
       </p>
 
-      <h3 class="h3">id や親子要素のセレクタ</h3>
-      <p class="alert alert-info">
-        querySelectorAll() はHTML内の全ての input が存在があると全て取得してしまうため、誤動作の原因となる。<br>
-        その場合、id や 親子要素のなど指定をすると良い。
-      </p>
-      <pre class="language-javascript"><code>
-      let test_input = document.querySelectorAll('#item_list > input');
-      </code></pre>
-    </div>
-
-    <div id="foreach_value">
-      <h2 class="h2">forEach と valueプロパティ</h2>
-      <p class="alert alert-info">
-        querySelectorAll() で取得した要素を、forEach でループする<br>
-        また、各 input の値を設定する場合、value プロパティを利用する
-      </p>
-      <pre class="language-javascript"><code>
-      let item_list_elements = document.querySelectorAll('#item_list > input');
-
-      item_list_elements.forEach(element => {
-          element.value = 10
-      })
-      //または
-      item_list_elements.forEach(function(element) {
-          element.value = 10
-      }
-      </code></pre>
-
-      <div id="item_list">
-        <input type="text" name="item_name">
-        <input type="text" name="item_name">
-        <input type="text" name="item_name">
-      </div>
-
     </div>
 
     <div id="get_element_by_id">
-      <h2 class="h2"><label for="" class="badge badge-danger">Point</label> document.getElementById()</h2>
-      <p class="alert alert-info">
-        指定したIDの Element を取得
+      <h2 class="h2"> document.getElementById()</h2>
+      <p class="">
+        指定したIDの要素を取得
         <br>
         id はHTML内でユニークであること
       </p>
       <pre class="language-javascript"><code>
-        document.getElementById('ID Name');
-        </code></pre>
-
-      <h3 class="h3">HTML</h3>
-      <script type="text/plain" class="language-markup">
-      <h2 id="title"></h2>
-      </script>
-
-      <h3 class="h3">JS</h3>
-      <p class="alert alert-info">
-        id=title を取得
-      </p>
-      <pre class="language-javascript"><code>
-      let title = document.getElementById('title');
+        document.getElementById('ID名');
       </code></pre>
     </div>
 
-
     <div id="get_elements_by_class_name">
-      <h2 class="h2"><label for="" class="badge badge-danger">Point</label> document.getElementsByClassName()</h2>
-      <p class="alert alert-info">
-        指定した class の Element オブジェクトを取得
+      <h2 class="h2"> document.getElementsByClassName()</h2>
+      <p class="">
+        指定した class の要素を取得
       </p>
       <pre class="language-javascript"><code>
-      document.getElementsByClassName('Class Name');
-      </code></pre>
-
-      <h3 class="h3">HTML</h3>
-      <script type="text/plain" class="language-markup">
-      <ul id="city_list">
-        <li class="city_name">Tokyo</li>
-        <li class="city_name">Osaka</li>
-        <li class="city_name">Yokohama</li>
-      </ul>
-      </script>
-
-      <h3 class="h3">JS</h3>
-      <p class="alert alert-info">
-        name=city_name を取得
-      </p>
-      <pre class="language-javascript"><code>
-      let city_names = document.getElementsByClassName('city_name');
+      document.getElementsByClassName('Class名');
       </code></pre>
 
       <h4 class="h4">memo</h4>
       <p class="alert alert-danger">
         querySelectorAll() の戻り値は、Array でなく HTMLCollection 型であることに注意<br>
-        （そのままでは、forEach できないなど）
+        HTMLCollection をそのままforEach できないので、querySelectorAll() を利用したほうがよい場合がある。
       </p>
-      <pre class="language-javascript"><code>
-      let city_names = document.getElementsByClassName('city_name');
-      Array.prototype.forEach.call(city_names, function(city_name) {
-          console.log(city_name.innerHTML)
-      })
-      //または
-      city_names = Array.from(city_names)
-      city_names.forEach(function(city_name) {
-          console.log(city_name.innerHTML)
-      })
-      </code></pre>
-
     </div>
 
     <div id="get_element_by_name">
       <h2 class="h2">document.getElementsByName()</h2>
-      <p class="alert alert-info">
+      <p class="">
         指定した name の NodeList コレクションを取得
       </p>
       <pre class="language-javascript"><code>
-      document.getElementsByName('Name');
-      </code></pre>
-      <h3 class="h3">HTML</h3>
-      <script type="text/plain" class="language-markup">
-      <input type="text" name="code" value="1">
-      <input type="text" name="lat" value="35.652832">
-      <input type="text" name="lng" value="139.839478">
-    </script>
-
-      <h3 class="h3">JS</h3>
-      <pre class="language-javascript"><code>
-      let numbers = document.getElementsByName('number');
+      document.getElementsByName('要素の名前');
       </code></pre>
     </div>
 
-    <div id="lesson">
+    <div>
       <h2 class="h2">練習</h2>
-      <p class="alert alert-info">
-        以下のHTMLから document 要素(Element)を console.log() で 確認してみる
+      <p>
+        DOMの内容を console.log() で確認したり、操作してみよう
       </p>
+      <h3 class="h3">HTML</h3>
       <script type="text/plain" class="language-markup">
-      <h2 id="title"></h2>
+    <h2 id="title">アイテム</h2>
+    <div id="item_code">
+      <input type="text" name="code">
+      <input type="text" name="code">
+      <input type="text" name="code">
+    </div>
+    <div id="item_list">
+      <input type="text" name="city_name">
+      <input type="text" name="city_name">
+      <input type="text" name="city_name">
+    </div>
+    <div>
       <ul id="city_list">
-        <li>
-          <div class="city_name">Tokyo</div>
-          <input type="text" name="number" value="1">
-          <input type="text" name="lat" value="35.652832">
-          <input type="text" name="lng" value="139.839478">
-        </li>
-        <li>
-          <div class="city_name">Osaka</div>
-          <input type="text" name="number" value="2">
-          <input type="text" name="lat" value="34.669529">
-          <input type="text" name="lng" value="135.497009">
-        </li>
-        <li>
-          <div class="city_name">Yokohama</div>
-          <input type="text" name="number" value="3">
-          <input type="text" name="lat" value="35.443707">
-          <input type="text" name="lng" value="139.638031">
-        </li>
+        <li class="city_name">Tokyo</li>
+        <li class="city_name">Osaka</li>
+        <li class="city_name">Yokohama</li>
       </ul>
-      </script>
+    </div>
+    </script>
+    </div>
 
-      <h2 id="title"><span>Title</span></h2>
-      <ul id="city_list">
-        <li>
-          <div class="city_name">Tokyo</div>
-          <input type="text" name="number" value="1">
-          <input type="text" name="lat" value="35.652832">
-          <input type="text" name="lng" value="139.839478">
-        </li>
-        <li>
-          <div class="city_name">Osaka</div>
-          <input type="text" name="number" value="2">
-          <input type="text" name="lat" value="34.669529">
-          <input type="text" name="lng" value="135.497009">
-        </li>
-        <li>
-          <div class="city_name">Yokohama</div>
-          <input type="text" name="number" value="3">
-          <input type="text" name="lat" value="35.443707">
-          <input type="text" name="lng" value="139.638031">
-        </li>
-      </ul>
+    <div>
+      <h3 class="h3">querySelector()</h3>
+      <p>最初の input を選択</p>
+      <pre class="language-javascript"><code>
+      let first_input = document.querySelector('input');
+      </code></pre>
+
+      <h3 class="h3">querySelectorAll()</h3>
+      <p>全ての input を選択</p>
+      <pre class="language-javascript"><code>
+      let all_input = document.querySelectorAll('input');
+      </code></pre>
+
+      <h3 class="h3">親子要素</h3>
+      <p>id=item_list の子要素 input を全て選択</p>
+      <pre class="language-javascript"><code>
+      let item_list_selector = document.querySelectorAll('#item_list > input');
+      </code></pre>
+
+      <h3 class="h3">id 指定</h3>
+      <p>id=title を指定する</p>
+
+      <h4 class="h4">querySelector()</h4>
+      <pre class="language-javascript"><code>
+      let title_selector = document.querySelector('#title')
+      </code></pre>
+
+      <h4 class="h4">getElementById()</h4>
+      <pre class="language-javascript"><code>
+      let title_element = document.getElementById('title');
+      </code></pre>
+
+      <h3 class="h3">テキスト、HTMLの取得</h3>
+      <h4 class="h4">innerHTML</h4>
+      <pre class="language-javascript"><code>
+      title_selector.innerText;
+      </code></pre>
+
+      <h4 class="h4">innerHTML</h4>
+      <pre class="language-javascript"><code>
+      title_selector.innerHTML;
+      </code></pre>
+
+      <h3 class="h3">class 指定</h3>
+      <p>class=city_name を選択する</p>
+
+      <h4 class="h4">querySelector()</h4>
+      <pre class="language-javascript"><code>
+      let city_name_class_selector = document.querySelectorAll('.city_name');
+      </code></pre>
+
+      <h4 class="h4">getElementsByClassName()</h4>
+      <pre class="language-javascript"><code>
+      let city_name_class_elements = document.getElementsByClassName('city_name');
+      </code></pre>
+
+      <h3 class="h3">name 指定</h3>
+      <p>name=city_name を全て選択する</p>
+      <h4 class="h4">querySelector()</h4>
+      <pre class="language-javascript"><code>
+      let city_name_selector = document.querySelectorAll('input[name=city_name]');
+      </code></pre>
+
+      <h4 class="h4">getElementsByName()</h4>
+      <pre class="language-javascript"><code>
+      let city_name_elements = document.getElementsByName('city_name');
+      </code></pre>
+
+      <h2 class="h2">forEach</h2>
+      <h3 class="h3">HTML Collection をループ</h3>
+      <p>Array に変更してから forEach</p>
+      <pre class="language-javascript"><code>
+      Array.from(city_name_elements).forEach(function(element) {
+          //element を確認してみる
+      })
+      </code></pre>
+
+      <h3 class="h3">NodeList をループ</h3>
+      <p>そのまま forEach</p>
+      <pre class="language-javascript"><code>
+      city_name_class_selector.forEach(function(element) {
+          //element を確認してみる
+      })
+      </code></pre>
+
     </div>
 
     <p><a href="../index.html">Back</a></p>
