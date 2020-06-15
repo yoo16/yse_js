@@ -17,17 +17,6 @@
     <p><a href="../index.html">Back</a></p>
     <h1 class="h1">DOM 2</h1>
 
-    <div id="create_element">
-      <h2 class="h2">createElement() メソッド</h2>
-      <p class="">
-        Element を作成
-      </p>
-      <pre class="language-javascript"><code>
-      document.createElement('要素名')
-      </code></pre>
-    </div>
-
-
     <div id="inner_text">
       <h2 class="h2">innerText プロパティ</h2>
       <p class="">
@@ -78,10 +67,37 @@
       </code></pre>
     </div>
 
+    <div id="class_name_property">
+      <h2 class="h2">className プロパティ</h2>
+      <p class="">
+        class の値を取得・設定
+      </p>
+
+      <h3 class="h3">取得</h3>
+      <pre class="language-javascript"><code>
+      要素.className
+      </code></pre>
+      <h3 class="h3">設定</h3>
+      <pre class="language-javascript"><code>
+      要素.className = '値'
+      </code></pre>
+    </div>
+
+    <div id="first_child_property">
+      <h2 class="h2">firstChild プロパティ</h2>
+      <p class="">
+      その直接の子のリスト内の最初のNodeを取得<br>
+      何もない場合は、null
+      </p>
+      <pre class="language-javascript"><code>
+      要素.firstChild
+      </code></pre>
+    </div>
+
     <div id="html_style">
       <h2 class="h2">style プロパティ</h2>
-      <p class="alert alert-info">
-        style の取得・設定
+      <p class="">
+        style(CSS) の取得・設定
       </p>
       <h3 class="h3">取得</h3>
       <pre class="language-javascript"><code>
@@ -100,13 +116,63 @@
       </code></pre>
     </div>
 
+    <div id="create_element">
+      <h2 class="h2">createElement() メソッド</h2>
+      <p class="">
+        Element を作成
+      </p>
+      <pre class="language-javascript"><code>
+      document.createElement('要素名')
+      </code></pre>
+    </div>
+
+    <div id="after">
+      <h2 class="h2">after() メソッド</h2>
+      <p class="">
+        指定した要素の後に要素を追加
+      </p>
+      <pre class="language-javascript"><code>
+      要素.hasChildNodes(要素)
+      </code></pre>
+    </div>
+
+    <div id="remove">
+      <h2 class="h2">after() メソッド</h2>
+      <p class="">
+        要素を削除
+      </p>
+      <pre class="language-javascript"><code>
+      要素.remove()
+      </code></pre>
+    </div>
+
     <div id="append_child">
       <h2 class="h2">appendChild() メソッド</h2>
-      <p class="alert alert-info">
+      <p class="">
         指定した親要素に要素を追加
       </p>
       <pre class="language-javascript"><code>
-      親要素.appendChild(要素);
+      親要素.appendChild(要素)
+      </code></pre>
+    </div>
+
+    <div id="remove_child">
+      <h2 class="h2">removeChild() メソッド</h2>
+      <p class="">
+        指定した親要素に要素を追加
+      </p>
+      <pre class="language-javascript"><code>
+      親要素.appendChild(要素)
+      </code></pre>
+    </div>
+
+    <div id="has_child_nodes">
+      <h2 class="h2">hasChildNodes() メソッド</h2>
+      <p class="">
+        指定した親要素に子要素を持っているか
+      </p>
+      <pre class="language-javascript"><code>
+      親要素.hasChildNodes()
       </code></pre>
     </div>
 
