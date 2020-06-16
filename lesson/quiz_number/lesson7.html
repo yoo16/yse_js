@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Number</title>
+</head>
+
+<body>
+  <div id="sample">
+    <div class="form">
+      <label for="guessField">数字を入力してください: </label>
+      <input type="text" id="guessField" class="guessField">
+      <input type="submit" value="予想を入力" class="guessSubmit">
+    </div>
+
+    <h3>自動予測</h3>
+    <div>
+      <button id="auto_guess_button">自動予測</button>
+      <h3>答え</h3>
+      <p id="answer"></p>
+      <h3>推測</h3>
+      <p id="auto_answer"></p>
+      <h3>回数</h3>
+      <p id="auto_guess_count"></p>
+    </div>
+
+    <div class="resultParas">
+      <p class="guesses"></p>
+      <p class="lastResult"></p>
+      <p class="lowOrHi"></p>
+    </div>
+  </div>
+
+  <script src="js/lesson7.js"></script>
+</body>
+
+</html>

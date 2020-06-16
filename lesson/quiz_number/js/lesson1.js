@@ -1,8 +1,9 @@
+
+function checkGuess() {
+}
+
 function setGameOver() {
 }
 
 function resetGame() {
-}
-
-function checkGuess() {
 }

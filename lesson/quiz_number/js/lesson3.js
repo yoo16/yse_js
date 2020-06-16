@@ -12,6 +12,19 @@ let resetButton;
 guessSubmit.addEventListener('click', checkGuess);
 
 function checkGuess() {
+    let userGuess = Number(guessField.value);
+
+    //guesses.textContent += userGuess + ' ';
+    guesses.innerText += userGuess + ' ';
+
+    if (userGuess === randomNumber) {
+        lastResult.textContent = 'おめでとう! 正解です!';
+    } else if (guessCount === 10) {
+        lastResult.textContent = '!!!ゲームオーバー!!!';
+    } else {
+        lastResult.textContent = '間違いです!';
+    }
+    guessCount++;
 }
 
 function setGameOver() {

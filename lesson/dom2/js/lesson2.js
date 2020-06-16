@@ -1,31 +1,69 @@
-console.log('--- createElement ---');
-let element_div = document.createElement('div');
-//console.log(element_div);
+function addMessage() {
+    let message = document.createElement('div');
+    message.innerHTML = 'Hello Tokyo';
+    message.className = 'message';
 
-console.log('--- innerText ---');
-let text_title = document.querySelector('#text_title');
-//let text_title = document.getElementById('title');
-text_title.innerText = '<p>Text Title!!</p>'
+    let message_top = document.querySelector('#message_top');
+    //let message = document.getElementById('message');
+    message_top.after(message);
+}
 
-console.log('--- innerHTML ---');
-let html_title = document.querySelector('#html_title');
-//let html_title = document.getElementById('html_title');
-html_title.innerHTML = '<p>HTML Title</p>'
+function addCity() {
+    let city_area = document.querySelector('#city_area');
+    //let city_area = document.getElementById('city_area');
 
-console.log('--- value ---');
-//document.getElementById('amount').value = 15;
-document.querySelector('#amount').value = 15;
+	if (!city_area.hasChildNodes()){
+        let p1 = document.createElement('p');
+        p1.innerHTML = '<strong>Tokyo</strong>'
+		city_area.appendChild(p1);
+	}
+}
 
-console.log('--- style ---');
-//let style_element = document.getElementById('price');
-let style_element = document.querySelector('#price');
-style_element.style.color = '#ff0000';
-style_element.style.border = '1px solid #ff0000';
-style_element.style.padding = '10px';
+function removeCity() {
+    let city_area = document.querySelector('#city_area');
+    //let city_area = document.getElementById('city_area');
 
-console.log('--- appendChild ---');
-let comment_p = document.createElement('p');
-comment_p.innerHTML = 'こんにちわ';
-comment_p.style.cssText = "background-color: yellow; padding: 10px;";
+	if (city_area.hasChildNodes()){
+		city_area.removeChild(city_area.firstChild);
+	} 
+}
 
-document.getElementById('parent').appendChild(comment_p);
+function addItem() {
+    let item_name = document.querySelector('#item_name');
+    //let item_name = document.getElementById('item_name');
+
+    if (item_name.value) {
+        let item_list = document.getElementById('item_list');
+        let li = document.createElement('ul');
+        li.innerHTML = item_name.value;
+        li.style.cssText = 'background: red; color: white;'
+        item_list.appendChild(li);
+    }
+    item_name.value = ''
+}
+
+function removeItems() {
+    let item_list = document.querySelector('#item_list');
+    //let item_list = document.getElementById('item_list');
+
+    item_list.innerHTML = '';
+    // while (item_list.firstChild) {
+    //     if (item_list.hasChildNodes()){
+    //         item_list.removeChild(item_list.lastChild);
+    //     }
+    // }
+}
+
+function addNumber() {
+    let number = 0
+    let number_selector = document.querySelectorAll('.number')
+    if (number_selector) number = number_selector.length
+
+    let start = document.getElementById('start');
+    let span = document.createElement('span');
+    span.className = 'number';  
+    span.innerHTML = number;
+    span.style.cssText = 'background: red; color: white; padding: 5px; margin: 2px';
+
+    start.after(span); 
+}
