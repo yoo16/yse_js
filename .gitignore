@@ -1,5 +1,6 @@
 .vscode
 .DS_Store
+/examination_2020
 /node_modules
 /storage/*.key
 /vendor
