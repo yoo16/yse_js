@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="../css/prism.css">
   <link rel="stylesheet" href="../css/default.css">
 
-  <title>Quiz Number</title>
+  <title>Event</title>
 </head>
 
 <body>
@@ -18,64 +18,295 @@
     <h1 class="h1">イベント</h1>
 
     <div id="event_type">
-      <h2 class="h2">イベントタイプ</h2>
-      <a href="https://developer.mozilla.org/ja/docs/Web/Events" target="_blank">イベントリファレンス</a>
+      <h2 class="h2">イベント ドキュメント</h3>
+        <ul>
+          <li><a href="https://developer.mozilla.org/ja/docs/Web/API/Event" target="_blank">インターフェイス</a></li>
+          <li><a href="https://developer.mozilla.org/ja/docs/Web/Events" target="_blank">イベントリファレンス</a></li>
+        </ul>
 
-      <table class="table table-responsive">
-        <tr>
-          <th>load</th>
-          <td>読み込みが完了</td>
-        </tr>
-        <tr>
-          <th>scroll</th>
-          <td>スクロール位置が変更されたとき</td>
-        </tr>
-        <tr>
-          <th>resize</th>
-          <td>ターゲットのサイズが変更されたとき</td>
-        </tr>
-        <tr>
-          <th>click</th>
-          <td>クリックしたとき（mousedown と mouseup）</td>
-        </tr>
-        <tr>
-          <th>mousedown</th>
-          <td>ターゲット内でマウスをダウンしたとき</td>
-        </tr>
-        <tr>
-          <th>mouseup</th>
-          <td>ターゲット内でマウスをアップしたとき</td>
-        </tr>
-        <tr>
-          <th>mousemove</th>
-          <td>マウスカーソルがターゲットの中に移動したとき</td>
-        </tr>
-        <tr>
-          <th>mouseout</th>
-          <td>マウスカーソルがターゲットの外に移動したとき</td>
-        </tr>
-        <tr>
-          <th>select</th>
-          <td>フィールドで文字が選択されたとき</td>
-        </tr>
-        <tr>
-          <th>submit</th>
-          <td>submit ボタンが押されたとき</td>
-        </tr>
-        <tr>
-          <th>focus</th>
-          <td>ターゲット内でマウスをアップしたとき</td>
-        </tr>
-        <tr>
-          <th>blur</th>
-          <td>ターゲットがフォーカスを失ったとき</td>
-        </tr>
-      </table>
+        <h3 class="h3">イベントタイプの一例</h3>
+        <table class="table table-responsive">
+          <tr>
+            <th>load</th>
+            <td>読み込みが完了</td>
+          </tr>
+          <tr>
+            <th>scroll</th>
+            <td>スクロール位置が変更されたとき</td>
+          </tr>
+          <tr>
+            <th>resize</th>
+            <td>ターゲットのサイズが変更されたとき</td>
+          </tr>
+          <tr>
+            <th>click</th>
+            <td>クリックしたとき（mousedown と mouseup）</td>
+          </tr>
+          <tr>
+            <th>mousedown</th>
+            <td>ターゲット内でマウスをダウンしたとき</td>
+          </tr>
+          <tr>
+            <th>mouseup</th>
+            <td>ターゲット内でマウスをアップしたとき</td>
+          </tr>
+          <tr>
+            <th>mouseover</th>
+            <td>マウスカーソルがターゲットの中に入ったとき</td>
+          </tr>
+          <tr>
+            <th>mousemove</th>
+            <td>マウスカーソルがターゲットの中に移動したとき</td>
+          </tr>
+          <tr>
+            <th>mouseout</th>
+            <td>マウスカーソルがターゲットの外に移動したとき</td>
+          </tr>
+          <tr>
+            <th>input</th>
+            <td>値が入力されたとき</td>
+          </tr>
+          <tr>
+            <th>change</th>
+            <td>
+              値が変更されたとき
+              <br>
+              フォーカスが外れたときに発生
+            </td>
+          </tr>
+          <tr>
+            <th>keypdown</th>
+            <td>キーが押されたときに発生</td>
+          </tr>
+          <tr>
+            <th>keyup</th>
+            <td>キーが離されたときに発生</td>
+          </tr>
+          <tr>
+            <th>submit</th>
+            <td>submit ボタンが押されたとき</td>
+          </tr>
+          <tr>
+            <th>select</th>
+            <td>フィールドで文字が選択されたとき</td>
+          </tr>
+          <tr>
+            <th>focus</th>
+            <td>ターゲット内でマウスをアップしたとき</td>
+          </tr>
+          <tr>
+            <th>blur</th>
+            <td>ターゲットがフォーカスを失ったとき</td>
+          </tr>
+        </table>
+    </div>
 
+    <div id="event_target">
+      <h2 class="h2">参考</h2>
+      <a href="https://developer.mozilla.org/ja/docs/Web/API/EventTarget">EventTarget</a>
+
+      <div>
+        <h2 class="h2">addEventListener()</h2>
+        <pre class="language-javascript"><code>
+          ターゲット.addEventListener(イベント名, イベントハンドラ)
+        </code></pre>
+
+        <button id="message_btn">Click</button>
+
+        <h3 class="h3">HTML</h3>
+        <script type="text/plain" class="language-markup">
+          <button id="message_btn">Click</button>
+        </script>
+
+        <h3 class="h3">JS</h3>
+        <pre class="language-javascript"><code>
+          let message_btn = document.getElementById('#message_btn')
+          message_btn.addEventListener('click', showMessage)
+
+          function showMessage() {
+              alert('Click Event!');
+          }
+        </code></pre>
+      </div>
+
+      <div>
+        <h2 class="h2">removeEventListener()</h2>
+        <pre class="language-javascript"><code>
+          EventTarget.removeEventListener()
+        </code></pre>
+
+        <button id="click_btn">Click Event</button>
+        <button id="remove_btn">Remove Event</button>
+
+        <h3 class="h3">HTML</h3>
+        <script type="text/plain" class="language-markup">
+          <button id="click_btn">Click Event</button>
+          <button id="remove_btn">Remove Event</button>
+        </script>
+
+        <h3 class="h3">JS</h3>
+        <pre class="language-javascript"><code>
+          let click_btn = document.getElementById('#click_btn')
+          let clickHandler = click_btn.addEventListener('click', showMessage)
+          let remove_btn = document.getElementById('remove_btn')
+          remove_btn.addEventListener('click', clickHandler)
+        </code></pre>
+      </div>
+    </div>
+
+
+    <div>
+      <h2 class="h2">練習</h2>
+      <h3 class="h3">CSS</h3>
+      <p>
+        style.css ファイルを作成し css フォルダに入れる
+      </p>
+      <pre class="language-css"><code>
+      index.html
+      js/main.js
+      css/style.css
+      </code></pre>
+
+      <p>
+        style.css を読み込むタグを、HTMLファイルの head内に追記
+      </p>
+      <script type="text/plain" class="language-markup">
+      <head>
+        <!--　省略 -->
+        <link rel="stylesheet" href="css/style.css">
+        <!--　省略 -->
+      </head>
+      </script>
+
+      <h4 class="h4">style.css</h4>
+      <pre class="language-css"><code>
+      .area {
+          width: 100px;
+          height: 100px;
+          border: 1px solid;
+      }
+      </code></pre>
+
+      <h2 class="h2">clickイベント</h2>
+      <h3 class="h3">HTML</h3>
+      <script type="text/plain" class="language-markup">
+        <button id="message_btn">Click</button>
+        <div id="click_result"></div>
+      </script>
+
+      <h3 class="h3">JS</h3>
+      <pre class="language-javascript"><code>
+        let click_btn = document.getElementById('click_btn')
+        message_btn.addEventListener('click', showMessage)
+        
+        function showMessage() {
+            document.getElementById('click_result').innerHTML = 'ようこそ'
+        }
+      </code></pre>
+
+
+      <h2 class="h2">changeイベント</h2>
+      <h3 class="h3">HTML</h3>
+      <script type="text/plain" class="language-markup">
+        <input type="text" id="input1">
+        <div id="input1_message"></div>
+      </script>
+
+      <h3 class="h3">JS</h3>
+      <pre class="language-javascript"><code>
+        let input1 = document.getElementById('input1')
+        input1.addEventListener('change', function () {
+            document.getElementById('input1_message').innerHTML = this.value
+        })
+      </code></pre>
+
+      <h2 class="h2">changeイベント</h2>
+      <h3 class="h3">HTML</h3>
+      <script type="text/plain" class="language-markup">
+        <input type="text" id="input2">
+        <div id="input2_message"></div>
+      </script>
+
+      <h3 class="h3">JS</h3>
+      <pre class="language-javascript"><code>
+        let input1 = document.getElementById('input1')
+        input1.addEventListener('change', function () {
+            document.getElementById('input1_message').innerHTML = this.value
+        })
+      </code></pre>
+
+
+      <h2 class="h2">mouseover & mouseout イベント</h2>
+      <h3 class="h3">HTML</h3>
+      <script type="text/plain" class="language-markup">
+        <div id="mouse_area" class="area"></div>
+        <div id="mouse_result"></div>
+      </script>
+
+      <h3 class="h3">JS</h3>
+      <pre class="language-javascript"><code>
+      let mouse_area = document.getElementById('mouse_area')
+      mouse_area.addEventListener('mouseover', function (event) {
+          this.innerHTML = 'マウスオーバー'
+      })
+      mouse_area.addEventListener('mouseout', function (event) {
+          this.innerHTML = 'マウスアウト'
+      })
+      </code></pre>
+
+
+      <h2 class="h2">mousemove イベント</h2>
+      <h3 class="h3">HTML</h3>
+      <script type="text/plain" class="language-markup">
+        <div id="mouse_move_area" class="area"></div>
+      </script>
+
+      <h3 class="h3">JS</h3>
+      <pre class="language-javascript"><code>
+      let mouse_move_area = document.getElementById('mouse_move_area')
+      mouse_move_area.addEventListener('mousemove', function (event) {
+          //let message = `(x, y) = (${event.pageX} ${event.pageY})`
+          let message = '(x, y) = (' + event.pageX + ',' + event.pageY + ')'
+          this.innerHTML = message
+      })
+      </code></pre>
+
+
+      <h2 class="h2">window resize イベント</h2>
+      <h3 class="h3">HTML</h3>
+      <script type="text/plain" class="language-markup">
+        <div id="resize_result"></div>
+      </script>
+
+      <h3 class="h3">JS</h3>
+      <pre class="language-javascript"><code>
+      window.addEventListener('resize', function() {
+          let message = '(width, height) = (' + window.innerWidth + ',' + window.innerHeight + ')'
+          document.getElementById('resize_result').innerHTML = message
+      }, false );
+      </code></pre>
+
+      <h2 class="h2">window scroll イベント</h2>
+      <h3 class="h3">HTML</h3>
+      <script type="text/plain" class="language-markup">
+        <button id="scroll_btn">Scroll</button>
+      </script>
+
+      <h3 class="h3">JS</h3>
+      <pre class="language-javascript"><code>
+      function windowScroll() {
+          window.scrollTo({
+              top: 0,
+              behavior: "smooth"
+          })
+          //window.scoll(0, 50);
+      }
+      </code></pre>
+    
     </div>
   </div>
   <script src="../js/jquery-3.5.0.min.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=2020617"></script>
 
   <script src="../js/bootstrap/bootstrap.min.js"></script>
   <script src="../js/prism.js"></script>
