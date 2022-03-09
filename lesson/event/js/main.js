@@ -9,6 +9,7 @@ function showMessage() {
     alert('Click Event!');
 }
 
+//remove event
 let click_btn = document.getElementById('click_btn')
 click_btn.addEventListener('click', showMessage)
 

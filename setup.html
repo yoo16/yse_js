@@ -29,10 +29,6 @@
         <li class="list-group-item">「VSCode」で検索</li>
       </ul>
 
-      <div>
-        <img src="images/vscode_top.png" alt="">
-      </div>
-
       <div class="m-2">
         <a class="btn btn-outline-primary btn-block"
           href="https://azure.microsoft.com/ja-jp/products/visual-studio-code/" target="_blank">VSCode ダウンロード</a>
@@ -73,27 +69,15 @@
         <h3 class="h3">機能拡張インストール</h3>
         <h4 class="h4">HTML Snippets</h4>
         <p class="alert alert-info">ショートカットで html タグを入力できる</p>
-        <div>
-          <img src="images/vscode_ex_html_snippets.png" alt="" class="vscode_ex_image">
-        </div>
 
         <h4 class="h4">CSS Formatter</h4>
         <p class="alert alert-info">CSSを整形してくれる</p>
-        <div>
-          <img src="images/vscode_ex_css_formatter.png" alt="" class="vscode_ex_image">
-        </div>
 
         <h4 class="h4">JavaScript (ES6) code snippets</h4>
         <p class="alert alert-info">JavaScript 用のスニペット</p>
-        <div>
-          <img src="images/vscode_ex_js_snippets.png" alt="" class="vscode_ex_image">
-        </div>
 
         <h4 class="h4">Live Server</h4>
         <p class="alert alert-info">Webサーバをたてなくても、擬似的に表示できる</p>
-        <div>
-          <img src="images/vscode_ex_liveserver.png" alt="">
-        </div>
       </div>
 
     </div>
@@ -103,8 +87,25 @@
   <script src="js/jquery-3.5.0.min.js"></script>
   <script src="js/bootstrap/bootstrap.min.js"></script>
   <script src="js/prism.js"></script>
-  <script src="js/ruby.js"></script>
+  <script src="js/ruby-word.js"></script>
 
+  <script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      let rubyWords = [
+          { word: '環境構築', kana: 'かんきょうこうちく' },
+          { word: '講義', kana: 'こうぎ' },
+          { word: '提供', kana: 'ていきょう' },
+          { word: '無償', kana: 'むしょう' },
+          { word: '講義用', kana: 'こうぎよう' },
+          { word: '開発現場', kana: 'かいはつげんば' },
+      ];
+      json = JSON.stringify(rubyWords);
+      let ruby_word = new RubyWord({
+        json: json,
+      });
+      ruby_word.convert();
+    });
+  </script>
 </body>
 
 </html>

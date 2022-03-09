@@ -132,7 +132,7 @@
       <div>
         <h2 class="h2">removeEventListener()</h2>
         <pre class="language-javascript"><code>
-          EventTarget.removeEventListener()
+          ターゲット.removeEventListener(イベント名, イベントハンドラ)
         </code></pre>
 
         <button id="click_btn">Click Event</button>
@@ -146,10 +146,13 @@
 
         <h3 class="h3">JS</h3>
         <pre class="language-javascript"><code>
-          let click_btn = document.getElementById('#click_btn')
-          let clickHandler = click_btn.addEventListener('click', showMessage)
+          let click_btn = document.getElementById('click_btn')
+          click_btn.addEventListener('click', showMessage)
+          
           let remove_btn = document.getElementById('remove_btn')
-          remove_btn.addEventListener('click', clickHandler)
+          remove_btn.addEventListener('click', function() {
+              click_btn.removeEventListener('click', showMessage)
+          })
         </code></pre>
       </div>
     </div>
@@ -188,6 +191,7 @@
       </code></pre>
 
       <h2 class="h2">clickイベント</h2>
+      <p>クリックしたときに発生</p>
       <h3 class="h3">HTML</h3>
       <script type="text/plain" class="language-markup">
         <button id="message_btn">Click</button>
@@ -206,6 +210,7 @@
 
 
       <h2 class="h2">changeイベント</h2>
+      <p>値が変更されたときに発生</p>
       <h3 class="h3">HTML</h3>
       <script type="text/plain" class="language-markup">
         <input type="text" id="input1">
@@ -220,7 +225,8 @@
         })
       </code></pre>
 
-      <h2 class="h2">changeイベント</h2>
+      <h2 class="h2">inputイベント</h2>
+      <p>入力されたときに発生</p>
       <h3 class="h3">HTML</h3>
       <script type="text/plain" class="language-markup">
         <input type="text" id="input2">
@@ -229,14 +235,15 @@
 
       <h3 class="h3">JS</h3>
       <pre class="language-javascript"><code>
-        let input1 = document.getElementById('input1')
-        input1.addEventListener('change', function () {
-            document.getElementById('input1_message').innerHTML = this.value
+        let input2 = document.getElementById('input2')
+        input2.addEventListener('input', function () {
+            document.getElementById('input2_message').innerHTML = this.value
         })
       </code></pre>
 
 
       <h2 class="h2">mouseover & mouseout イベント</h2>
+      <p>ターゲットにマウスオーバー、ターゲットからマウスアウトしたときに発生</p>
       <h3 class="h3">HTML</h3>
       <script type="text/plain" class="language-markup">
         <div id="mouse_area" class="area"></div>
@@ -256,6 +263,7 @@
 
 
       <h2 class="h2">mousemove イベント</h2>
+      <p>ターゲットの中でマウスが移動したといに発生</p>
       <h3 class="h3">HTML</h3>
       <script type="text/plain" class="language-markup">
         <div id="mouse_move_area" class="area"></div>
@@ -273,6 +281,7 @@
 
 
       <h2 class="h2">window resize イベント</h2>
+      <p>ウィンドウがリサイズされたときに発生</p>
       <h3 class="h3">HTML</h3>
       <script type="text/plain" class="language-markup">
         <div id="resize_result"></div>
@@ -286,7 +295,8 @@
       }, false );
       </code></pre>
 
-      <h2 class="h2">window scroll イベント</h2>
+      <h2 class="h2">window scroll メソッド</h2>
+      <p>ブラウザ内でスクロールする</p>
       <h3 class="h3">HTML</h3>
       <script type="text/plain" class="language-markup">
         <button id="scroll_btn">Scroll</button>
